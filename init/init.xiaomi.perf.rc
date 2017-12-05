@@ -85,6 +85,10 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sde/queue/nr_requests 128
     write /sys/block/sdf/queue/nr_requests 128
 
+    # Enable idle state listener
+    write /sys/class/drm/card0/device/idle_encoder_mask 1
+    write /sys/class/drm/card0/device/idle_timeout_ms 100
+
 on property:persist.sys.device_provisioned=1
     setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,7
     setprop dalvik.vm.dex2oat-threads 6

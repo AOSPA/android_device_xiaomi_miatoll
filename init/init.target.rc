@@ -321,21 +321,21 @@ service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    group system wifi inet sdcard_rw media_rw diag
    oneshot
 
-service ppd /vendor/bin/mm-pp-dpps
-    class late_start
-    user system
-    group system graphics
-    socket pps stream 0660 system system
-    disabled
+#service ppd /vendor/bin/mm-pp-dpps
+#    class late_start
+#    user system
+#    group system graphics
+#    socket pps stream 0660 system system
+#    disabled
 
-on property:init.svc.hwcomposer-2-1=stopped
-    stop ppd
+#on property:init.svc.hwcomposer-2-1=stopped
+#    stop ppd
 
-on property:init.svc.hwcomposer-2-1=running
-    start ppd
+#on property:init.svc.hwcomposer-2-1=running
+#    start ppd
 
-on property:init.svc.hwcomposer-2-1=restarting
-    stop ppd
+#on property:init.svc.hwcomposer-2-1=restarting
+#    stop ppd
 
 #service nqs /system/bin/nqs
 #    class late_start

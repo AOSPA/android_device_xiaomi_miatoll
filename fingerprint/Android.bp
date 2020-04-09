@@ -17,6 +17,7 @@ cc_binary {
     name: "android.hardware.biometrics.fingerprint@2.1-service.miatoll",
     defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.miatoll.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.miatoll.xml"],
     vendor: true,
     relative_install_path: "hw",
     srcs: [

@@ -1,0 +1,1 @@
+add_hwservice(nfc, hal_nfc_hwservice)

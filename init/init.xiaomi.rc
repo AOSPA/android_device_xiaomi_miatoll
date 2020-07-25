@@ -28,6 +28,7 @@ on post-fs-data
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
     mkdir /data/vendor/mac_addr 0771 system system
+    mkdir /data/vendor/nfc 0770 nfc nfc
 
 on boot
     chown system system /sys/class/drm/card0-DSI-1/disp_param

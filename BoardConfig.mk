@@ -70,6 +70,9 @@ DEVICE_MATRIX_FILE += device/qcom/common/compatibility_matrix.xml
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_miatoll
+
 # Kernel
 BOARD_KERNEL_CMDLINE += \
     androidboot.console=ttyMSM0 \
@@ -133,6 +136,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_USERIMAGES_USE_F2FS := true
 

@@ -140,5 +140,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_USERIMAGES_USE_F2FS := true
 
+# SELinux
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy/vendor
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-05-05

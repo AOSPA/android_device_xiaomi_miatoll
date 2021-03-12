@@ -57,6 +57,9 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# Gestures
+TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event1"
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/xiaomi_vendor_framework_compatibility_matrix.xml

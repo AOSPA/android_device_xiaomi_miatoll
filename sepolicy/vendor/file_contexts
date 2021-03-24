@@ -1,6 +1,9 @@
 # Battery secret
 /vendor/bin/batterysecret                                                                         u:object_r:batterysecret_exec:s0
 
+# Camera
+/mnt/vendor/persist/camera(/.*)?                                                                  u:object_r:camera_persist_file:s0
+
 # Fingerprint HAL
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.miatoll                   u:object_r:hal_fingerprint_default_exec:s0
 

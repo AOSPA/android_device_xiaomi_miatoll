@@ -659,6 +659,12 @@ vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib64/libwvhidl.so
 
+# DRM Ext1 - from gram
+vendor/lib64/liboemcrypto.so|5bc6ec673af97ff2883c847bedec7962dbf9d9a0
+
+# DRM Ext2 - from curtana
+vendor/lib64/liboemcrypto.so:vendor/lib64/liboemcrypto-curtana.so|ba8684ae8f255b981a2319bcaadaad9045ed13c6
+
 # DSP - from LA.UM.9.1.r1-09600-SMxxx0.0
 vendor/bin/dspservice|a8eb76af6150bbf29c12b76b00ab469b99f563f7
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da9e1f263a4eec55f

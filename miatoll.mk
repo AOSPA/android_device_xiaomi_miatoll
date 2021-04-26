@@ -113,12 +113,17 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.target.rc
 
+# Keyhandler
+PRODUCT_PACKAGES += \
+    KeyHandler
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/miatoll
 
 # Overlays
 PRODUCT_PACKAGES += \
+    AOSPAMiatollFrameworks \
     AOSPAMiatollSettings \
     MiatollFrameworks \
     MiatollSystemUI

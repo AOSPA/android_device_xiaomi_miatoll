@@ -73,6 +73,9 @@ DEVICE_MANIFEST_FILE += \
 
 DEVICE_MATRIX_FILE += device/qcom/common/compatibility_matrix.xml
 
+ODM_MANIFEST_SKUS := joyeuse
+ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/manifest-nfc.xml
+
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
 

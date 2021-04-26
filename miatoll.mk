@@ -117,6 +117,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     KeyHandler
 
+# NFC
+TARGET_NFC_SKU := joyeuse
+
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/miatoll

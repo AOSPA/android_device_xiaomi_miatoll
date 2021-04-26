@@ -72,6 +72,7 @@ void set_device_props(const std::string fingerprint, const std::string descripti
 void load_device_properties() {
     std::string hwname = GetProperty("ro.boot.hwname", "");
     std::string region = GetProperty("ro.boot.hwc", "");
+    std::string hwversion = GetProperty("ro.boot.hwversion", "");
 
     if (hwname == "curtana") {
         if (region == "Global_TWO") {
@@ -100,6 +101,8 @@ void load_device_properties() {
                          "redfin-user 11 RQ2A.210405.005 7181113 release-keys", "Redmi", "joyeuse",
                          "Redmi Note 9 Pro");
     }
+    property_override("vendor.boot.hwversion", hwversion.c_str());
+    property_override("ro.boot.product.hardware.sku", hwname.c_str());
 }
 
 void load_dalvik_properties() {

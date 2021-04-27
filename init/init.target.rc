@@ -78,8 +78,7 @@ on post-fs-data
 on boot
     write /dev/cpuset/audio-app/cpus 1-2
     chown system system /sys/kernel/hbtp/display_pwr
-    start rmt_storage
-    start rfs_access
+    start vendor.rmt_storage
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 0-3

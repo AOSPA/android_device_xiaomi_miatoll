@@ -110,6 +110,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.xiaomi.rc \
+    init.xiaomi.perf.rc \
     init.qti.dcvs.sh \
     init.target.rc
 

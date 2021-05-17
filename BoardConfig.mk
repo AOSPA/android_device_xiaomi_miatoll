@@ -96,8 +96,7 @@ BOARD_KERNEL_CMDLINE += \
     msm_rtb.enabled=1 \
     msm_rtb.filter=0x237 \
     service_locator.enable=1 \
-    swiotlb=1 \
-    androidboot.selinux=permissive
+    swiotlb=1
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096

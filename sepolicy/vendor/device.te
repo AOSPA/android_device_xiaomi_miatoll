@@ -1,2 +1,5 @@
+# IR
 type spidev_device, dev_type;
 
+# FP
+type vendor_fingerprint_device, dev_type;

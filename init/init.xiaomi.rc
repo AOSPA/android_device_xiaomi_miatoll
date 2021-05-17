@@ -18,6 +18,9 @@ on init
     chown system system /sys/class/leds/white/delay_on
     chown system system /sys/class/leds/white/delay_off
 
+    chown system system /dev/spidev0.1
+    chmod 0660 /dev/spidev0.1
+
 on fs
     chmod 0664 /sys/class/thermal/thermal_message/sconfig
     chown system system /sys/class/thermal/thermal_message/sconfig

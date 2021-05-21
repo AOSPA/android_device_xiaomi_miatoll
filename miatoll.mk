@@ -50,6 +50,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/miatoll
 
+# Overlays
+PRODUCT_PACKAGES += \
+    AOSPAMiatollSettings \
+    MiatollFrameworks \
+    MiatollSystemUI
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 

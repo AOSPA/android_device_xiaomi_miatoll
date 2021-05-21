@@ -1,0 +1,57 @@
+# Copyright (C) 2021 Paranoid Android
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+on fs
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/class/thermal/thermal_message/sconfig
+    chmod 0666 /sys/class/thermal/thermal_message/temp_state
+    chown system system /sys/class/thermal/thermal_message/temp_state
+
+on post-fs-data
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system
+    mkdir /data/vendor/mac_addr 0771 system system
+
+on boot
+    chown system system /sys/class/drm/card0-DSI-1/disp_param
+    chmod 0664 /sys/class/drm/card0-DSI-1/disp_param
+    chown system system /sys/class/drm/card0-DSI-1/mipi_reg
+    chmod 0664 /sys/class/drm/card0-DSI-1/mipi_reg
+    chown system system /sys/class/drm/card0-DSI-1/panel_info
+    chmod 0444 /sys/class/drm/card0-DSI-1/panel_info
+
+    chmod 0777 /sys/class/power_supply/battery/input_suspend
+    chmod 0777 /sys/class/power_supply/battery/charging_enabled
+    chmod 0777 /sys/class/power_supply/usb/typec_cc_orientation
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/usb/typec_cc_orientation
+
+    chmod 0666 sys/devices/platform/soc/890000.i2c/i2c-1/1-005a/cali
+    chmod 0666 sys/devices/platform/soc/890000.i2c/i2c-1/1-005a/cali_save
+    chmod 0666 sys/devices/platform/soc/890000.i2c/i2c-1/1-005a/f0_save
+    chmod 0666 sys/devices/platform/soc/890000.i2c/i2c-1/1-005a/osc_save
+    chmod 0666 sys/devices/platform/soc/890000.i2c/i2c-1/1-005a/osc_cali
+
+service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
+    override
+    class hal
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
+    capabilities BLOCK_SUSPEND
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
+    socket audio_hw_socket seqpacket 0666 system system
+    onrestart restart audioserver

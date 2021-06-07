@@ -18,16 +18,16 @@ vendor/etc/acdbdata/IDP/IDP_Speaker_cal.acdb|8a80a6a890a372214739fedd20149b617ce
 vendor/etc/acdbdata/IDP/IDP_workspaceFile.qwsp|746f937fb06994665f47ee748de57f410da58b25
 
 # ACDB loader
-vendor/lib/libacdb-fts.so|fd809b3ea76ddb2fb91b56435e1cd9fe99919bfe
-vendor/lib/libacdbloader.so|44215dad276b317bc497d1dc4ff34ca9777acca3
-vendor/lib/libacdbrtac.so|755a7a77b74c403049b910ed62547ffd02e5e429
-vendor/lib/libadiertac.so|b0af03b40901e62806edd8f11eaef8b1bfee11d0
-vendor/lib/libaudcal.so|dbea7eef45954bc9ce3acd2c40815a692d0c54b0
-vendor/lib64/libacdb-fts.so|f11a2382e678b2b2574cc6ecec7b1a6410f66d19
-vendor/lib64/libacdbloader.so|7efd98002603db8168b0b8cd449421c4c87ad03f
-vendor/lib64/libacdbrtac.so|e8081eb0e83a70eda98aec20a86fb8d810c540cd
-vendor/lib64/libadiertac.so|d390a6081a86fe2c13ebab2164ee237880ec9cb0
-vendor/lib64/libaudcal.so|4974d8b01a9892326a82ea3e68726620c6ca0cc7
+vendor/lib/libacdb-fts.so|c824f745df2be9dc7924055facbaf2e734962d49
+vendor/lib/libacdbloader.so|77c5e3136b10a771043a1d8174c48bf3a402cafa
+vendor/lib/libacdbrtac.so|8c92b723fbfa3bf5fd8ba43b5577273476392a6c
+vendor/lib/libadiertac.so|6242670c70599b4bbe08832945574864eb7b5bc7
+vendor/lib/libaudcal.so|75643ca3f116591675aa3a3fc55d7ed3ad6b0f5c
+vendor/lib64/libacdb-fts.so|0c171b540bb5d3337bffbf2c0f502a50a5d37bda
+vendor/lib64/libacdbloader.so|49a0f182dd8ed6c6e19bfde4baf5e1f1f178ff73
+vendor/lib64/libacdbrtac.so|e2c2791610a1bf256631e5330559add0a901bbc6
+vendor/lib64/libadiertac.so|5950e250ee085f9345e71c17a7131ccb4dea9d68
+vendor/lib64/libaudcal.so|1744f30c4e7dad32b00683394178abb8f197b976
 
 # ADSP - from LA.UM.9.1.r1-09600-SMxxx0.0
 vendor/bin/adsprpcd
@@ -84,67 +84,67 @@ vendor/lib/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio
-vendor/lib/liba2dpoffload.so|7c8799bd3bb80a282cae74e5f36b50fb4935ed08
-vendor/lib/libacdb-fts.so|fd809b3ea76ddb2fb91b56435e1cd9fe99919bfe
-vendor/lib/libacdbloader.so|44215dad276b317bc497d1dc4ff34ca9777acca3
-vendor/lib/libacdbrtac.so|755a7a77b74c403049b910ed62547ffd02e5e429
-vendor/lib/libadiertac.so|b0af03b40901e62806edd8f11eaef8b1bfee11d0
+vendor/lib/liba2dpoffload.so|6c712e2078dcfc9ab1bf48fa38649b3994afa7ff
+vendor/lib/libacdb-fts.so|c824f745df2be9dc7924055facbaf2e734962d49
+vendor/lib/libacdbloader.so|77c5e3136b10a771043a1d8174c48bf3a402cafa
+vendor/lib/libacdbrtac.so|8c92b723fbfa3bf5fd8ba43b5577273476392a6c
+vendor/lib/libadiertac.so|6242670c70599b4bbe08832945574864eb7b5bc7
 vendor/lib/libadm.so|c5d8693dbec640d3366ad7620833b2e4387f3c01
-vendor/lib/libaudcal.so|dbea7eef45954bc9ce3acd2c40815a692d0c54b0
+vendor/lib/libaudcal.so|75643ca3f116591675aa3a3fc55d7ed3ad6b0f5c
 vendor/lib/libaudioalsa.so|448ebf789e999363f848f8a42c5f87673145d635
 vendor/lib/libaudioconfigstore.so|a00b695d8ec2666bdce729e0f947149c3b78b2b5
 vendor/lib/libaudioparsers.so|b786d5a2a8f94edb11b5334bbe981dbd2633325f
-vendor/lib/libbatterylistener.so|482358957f82c481eb99d02ca0c087124cd0ef4f
-vendor/lib/libcirrusspkrprot.so|14565dcaf607a4819bb6fb2e4118029ec20f4903
+vendor/lib/libbatterylistener.so|6b5af3fa931962aa38e1cda09622e7e8dfd024a5
+vendor/lib/libcirrusspkrprot.so|9265f78ecd932b9b8e6821c46f6d0ee9dc5025eb
 vendor/lib/libcomprcapture.so|11c7feb8ce2dd2c95ceca97c8292ca4bda3b4b8f
 vendor/lib/libdrc.so|e27974e53efe0456cba96f6910ad977c6351d0b7
-vendor/lib/libexthwplugin.so|b97f01a9e85efa97077a6b923818be2262f99399
+vendor/lib/libexthwplugin.so|23ac520a9199718eac48534bb39516783e902c59
 vendor/lib/libhdmiedid.so|d581aec552fdef87e8c12c8e4f5a3273eda7cdb9
-vendor/lib/libhdmipassthru.so|964f873474fac0a50c02046964c62dde5138d60c
-vendor/lib/libhfp.so|1995c38e798b2931dfcab9ca29ce87d255e49cde
+vendor/lib/libhdmipassthru.so|9e84ac8db3b7f519dae1cab9a34b9e1312f1e4b7
+vendor/lib/libhfp.so|d1db430add07c2b8a48d0d4fdd67bcfc43d17c91
 vendor/lib/libqtigef.so|85fe1ab14623ff64d86feadebff429b1938f278a
-vendor/lib/libsndmonitor.so|99b5a6d5555da7260638b6fb48745e29787a771e
-vendor/lib/libspkrprot.so|4628e8d8dc58c42ad23c3ef79e73c311b70dd124
-vendor/lib/libssrec.so|b730fbb1e896ef1af42e63e2e37d4b593339169a
+vendor/lib/libsndmonitor.so|6c0c2fe6b3d2a6fea743e9d585e46293bc430141
+vendor/lib/libspkrprot.so|ee9b2a76f042f59a004006ea1be1dbfdb1b0ebe6
+vendor/lib/libssrec.so|2e3b54c7f944bc45175922336cfa788afd097e3a
 vendor/lib/libsurround_3mic_proc.so|1d425b4b0d89f68e0f0112e8f2f73b1cd5b6dea2
-vendor/lib64/liba2dpoffload.so|7ffcefb0b7fa5e8c86d46c0a27f2296b038e0559
-vendor/lib64/libacdb-fts.so|f11a2382e678b2b2574cc6ecec7b1a6410f66d19
-vendor/lib64/libacdbloader.so|7efd98002603db8168b0b8cd449421c4c87ad03f
-vendor/lib64/libacdbrtac.so|e8081eb0e83a70eda98aec20a86fb8d810c540cd
-vendor/lib64/libadiertac.so|d390a6081a86fe2c13ebab2164ee237880ec9cb0
-vendor/lib64/libaudcal.so|4974d8b01a9892326a82ea3e68726620c6ca0cc7
+vendor/lib64/liba2dpoffload.so|a822efff8d8fc2f4fcca87efa7796cf953f30287
+vendor/lib64/libacdb-fts.so|0c171b540bb5d3337bffbf2c0f502a50a5d37bda
+vendor/lib64/libacdbloader.so|49a0f182dd8ed6c6e19bfde4baf5e1f1f178ff73
+vendor/lib64/libacdbrtac.so|e2c2791610a1bf256631e5330559add0a901bbc6
+vendor/lib64/libadiertac.so|5950e250ee085f9345e71c17a7131ccb4dea9d68
+vendor/lib64/libaudcal.so|1744f30c4e7dad32b00683394178abb8f197b976
 vendor/lib64/libaudioalsa.so|d9316323d6d93b46c1f429cc0d4ef2271e04fd55
 vendor/lib64/libaudioconfigstore.so|3a34f90b540655ad3dc212f5228fd1d0db248a34
 vendor/lib64/libaudioparsers.so|326954ecd50e2b0a25ff0f076def93271a9bd554
-vendor/lib64/libbatterylistener.so|c3a38a4ade2c2ffaac90d9f7b2e6c9f123f1cfb5
-vendor/lib64/libcirrusspkrprot.so|c0b722859fc351c4a6deaf65808d9102e662db11
+vendor/lib64/libbatterylistener.so|842e9e1c2cb1e5a71088d0601fd5e3bab2364934
+vendor/lib64/libcirrusspkrprot.so|4b129a5f9e61fcff97b693718ad336db61b12af9
 vendor/lib64/libcomprcapture.so|d6200ce55dbb8827776bb1b51b1558cb837cde4f
-vendor/lib64/libexthwplugin.so|98f03c867adf2f15438609e385a41d88f395c6d1
+vendor/lib64/libexthwplugin.so|2f71f01a722653fd603ec4bbea0881e58027fa69
 vendor/lib64/libhdmiedid.so|665f8bf6b923617deb9514fe67082fc643e21670
-vendor/lib64/libhdmipassthru.so|cd14a382756070bc70e51dc92bab24a6bb35e942
-vendor/lib64/libhfp.so|43254a707ee582c6e27895ff5cd66ecf949a4406
+vendor/lib64/libhdmipassthru.so|a63ca1b45b356705fc2db388b47e81cc348854a2
+vendor/lib64/libhfp.so|a69a96082fa329df0ed2dfb2a76025118ff4929d
 vendor/lib64/libqtigef.so|4a3ee1e9333122af9f1ed3027204ab78f1d6a68e
-vendor/lib64/libsndmonitor.so|42cb5c76d7901ebd79d1b4b9b376fda53f5e3eec
-vendor/lib64/libspkrprot.so|6bda5d75d87f1e23dcd0cf94848fd8b7cbd5cdbb
-vendor/lib64/libssrec.so|c9b3356c2b37c586a3c72f481860ddcd498e7348
+vendor/lib64/libsndmonitor.so|bb3ef49ce58621e0f945ddaa2f8349a74646edae
+vendor/lib64/libspkrprot.so|393015d4928b57e0b6d2f60786df7773c3dc75c8
+vendor/lib64/libssrec.so|6f7da6a528ebda5c248febd22579c3c1d4e868ea
 
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so|44cd20e13920888b29d3b2e4bb0b2559a746bf8f
 vendor/lib/soundfx/libmisoundfx.so|151bf9a8e36b95d2d5ad4c502b4cfcebdcb56d22
-vendor/lib/soundfx/libqcompostprocbundle.so|77489ee275019c416577feeca37de1b522c4e80c
+vendor/lib/soundfx/libqcompostprocbundle.so|4b35454348a31265b84c5fd55298f395772d8c6d
 vendor/lib/soundfx/libqcomvisualizer.so|ffdf43e1c16b6fdb506a0a78366f8860739d940b
 vendor/lib/soundfx/libqcomvoiceprocessing.so|bc10238e7701f9c50b52190e37a6f28ac9f0a1f6
 vendor/lib/soundfx/libshoebox.so|8c25f9bd479540f1b43c6827020376a40a667270
 vendor/lib64/soundfx/libasphere.so|7d01becf38d808b232aef88025e4dd69839b788f
-vendor/lib64/soundfx/libqcompostprocbundle.so|df2f06951f34cc6d9ee54bf95ed14330690ce6d4
+vendor/lib64/soundfx/libqcompostprocbundle.so|f4bebe24fb8dc5bbd6784a18d04992ed6d20c9dd
 vendor/lib64/soundfx/libqcomvisualizer.so|ba95be313ad476c50de712d0bf46f5b23c348477
 vendor/lib64/soundfx/libqcomvoiceprocessing.so|0a345093deba35b15365728398dbd80ef206d2a1
 vendor/lib64/soundfx/libshoebox.so|81b3312b54e147c8b5375c712a004661fb78e8bf
 
 # Audio HAL
-vendor/lib/hw/audio.primary.atoll.so|122624a337d9dc96c339267111402022ad91808a
+vendor/lib/hw/audio.primary.atoll.so|8097d4051f763c17176647b54a2804cf3723ad22
 vendor/lib/libaudio_log_utils.so|71ec4d31ad6c9e9a4bee8db7b5ab55b70ef7c4c3
-vendor/lib64/hw/audio.primary.atoll.so|6ec35d3ac9b326eaeb20b3ac7153226c4f7bbc1b
+vendor/lib64/hw/audio.primary.atoll.so|18b77fba9d236d124f53cffc352e0712e45cc1fd
 vendor/lib64/libaudio_log_utils.so|6091c30d5724adb31a3b4c71379cc004c235905a
 
 # Audio HAL Ext
@@ -657,7 +657,7 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine|07ac13a602f25788e54c1500c2957f561dd9f90a
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff19064a81e07c4be82ceaf4bb5
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
-vendor/lib64/libwvhidl.so|2abdbc8966795ed903062ec1a8ba2e79bb5883f8
+vendor/lib64/libwvhidl.so|caa7d724b3f9816c93b1e2cbf0c8be0e1a9902ce
 
 # DRM Ext1 - from gram
 vendor/lib64/liboemcrypto.so
@@ -795,12 +795,12 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 # IPA
 vendor/etc/init/ipa_fws.rc|f1826b81077f51470c97781823f109f12361ac8b
 vendor/firmware/ipa_fws.b00|bc93bd0d1ed662f475579a5d7e706b1ad970eb7c
-vendor/firmware/ipa_fws.b01|500925766c69900209f2a2a9059d10f14e778ef6
+vendor/firmware/ipa_fws.b01|53fe7859e61ba8f4e12faf747d37954cd6b43560
 vendor/firmware/ipa_fws.b02|a4f15a2345382514ef64d40f58dbaa3f1e35c4e7
 vendor/firmware/ipa_fws.b03|c07cfef57f8f694b4cee41e78700614efbedf2bc
 vendor/firmware/ipa_fws.b04|e3552692a635dceca369cab6d9349091b669c80a
-vendor/firmware/ipa_fws.elf|603b3cb4924e093d70307d2409064fa9877b5523
-vendor/firmware/ipa_fws.mdt|96bb12a2fb99a2aa886e255fb5ab30e1eb0bdac6
+vendor/firmware/ipa_fws.elf|9bdf37fa95209a316f5d0e6262647ec63f874071
+vendor/firmware/ipa_fws.mdt|e5554465e29c550bbb47d12db058f191cfcf80e9
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti|ae97fa6b11b9537997b46dc5a4fe4faeebd131e1
@@ -815,23 +815,23 @@ vendor/lib64/libqcbor.so|67acd94f3c7110c9419f0fd064b6eb69c09a0738
 vendor/lib64/libqtikeymaster4.so|a77b733e362384f08c676bf7a15d549607348f7b
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.atoll.so|f596202ced4523ff8d9f290f9dfe2ab67434211b
+vendor/lib/hw/sound_trigger.primary.atoll.so|dea9db312d9f8539682ef6875da18d4c2afb9380
 vendor/lib/libadpcmdec.so|5232c32b93a8653612cd8fcdde161a9d7fe39c7f
 vendor/lib/libcapiv2svacnn.so|10271e9d5a32377740292bcf27f35098ee65fb5b
 vendor/lib/libcapiv2vop.so|ffde544a5b8b4db988e92308568a84caad80518e
-vendor/lib/libgcs-calwrapper.so|3cd4f6dabebed0e18b9083b4d4d34fd1e6854ec2
-vendor/lib/libgcs-ipc.so|a46b089b2bca4adbd30dc4cbd7c7ab2ec9602965
+vendor/lib/libgcs-calwrapper.so|a28ab7c914e38329fa122605d3ffd2f2e58461f1
+vendor/lib/libgcs-ipc.so|67a3b570fa093708bbd0b50a32775eb6ba041940
 vendor/lib/libgcs-osal.so|c8055991809da427b5fdf0b18b67cefc7b17a399
-vendor/lib/libgcs.so|42a4cab80ab4338f118f0bd061467761a4eb1dd9
+vendor/lib/libgcs.so|fc0f59b87a0a0f14b004949ab16d1090ac9aa7ef
 vendor/lib/liblistensoundmodel2.so|6b9b687a0d27dcff4a2362ab1e75d98066bb05cb
 vendor/lib/libmulawdec.so|4ad85b4982bf0cfed77c9bede75aac09a51ab062
-vendor/lib64/hw/sound_trigger.primary.atoll.so|a4236b2e2430ede2e0c2360df13e49c6e2329dac
+vendor/lib64/hw/sound_trigger.primary.atoll.so|bcbb0ef665d068004e98aefff88d5e51b03786b3
 vendor/lib64/libcapiv2svacnn.so|2feddde9dfee7ba606b72266d1b42e95d0e03c70
 vendor/lib64/libcapiv2vop.so|23a80adfacbfe48b8b4b57d74b3f4f847447ddf5
-vendor/lib64/libgcs-calwrapper.so|1f99a3ea9c1814a8ccc08f4de1dacafd94f8bd56
-vendor/lib64/libgcs-ipc.so|021b5029ba57d320d69c1ce7938296c5ad1b9a3f
+vendor/lib64/libgcs-calwrapper.so|f9fc9024068eeaecbd743253fe6e4c845c197e04
+vendor/lib64/libgcs-ipc.so|7e9dbf52c3cd400f221424c03908d94a0bb01752
 vendor/lib64/libgcs-osal.so|59ab5c733b8ded09a79dd6e233536c965ed0887c
-vendor/lib64/libgcs.so|cd71a2379fd231a7dc9860eef70918a148ba03ae
+vendor/lib64/libgcs.so|fe8bca337ad72d1229adc0a89a2537b1511ac121
 vendor/lib64/liblistensoundmodel2.so|5af77b25c11e3e9df049c7006653bb1c30eae85a
 vendor/lib64/libmulawdec.so|75298ca84a46f99b47e5a5ecc21b22a54d65c52c
 
@@ -885,7 +885,7 @@ vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
-vendor/etc/libnfc-nxp.conf|cb6275fb0c2040e64f0c15a34284dfb1bbe6c4f3
+vendor/etc/libnfc-nxp.conf|d890da533846f17e665942a99197c029387d323c
 vendor/lib/libpn553_fw.so|a8e29cc3ebb2e0df0fb505fc2da9c69a015680fb
 
 # PASR
@@ -906,7 +906,7 @@ vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
 # Public libraries
-vendor/etc/public.libraries.txt|7923a48bef7b731fc57567d20d21c41ec20fccb9
+vendor/etc/public.libraries.txt|a2cd81ba325ca81102d0c1a61a2ca8a50ca8d6f8
 
 # QMI (Qualcomm MSM Interface) - from LA.UM.9.1.r1-09600-SMxxx0.0
 vendor/bin/irsc_util
@@ -949,7 +949,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
 # QDCM
-vendor/bin/qdcmss|a1bb68e4508feac29c821eb791cae8b1db235e28
+vendor/bin/qdcmss|c335c154c16ee367236f3f99bbce626ea2ee32bf
 vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
 vendor/etc/qdcm_calib_data_ft8756_video_mode_dsi_huaxing_panel.xml|bc459e28b55aad3b1ad02ef005065e1270ca7ae8
 vendor/etc/qdcm_calib_data_nt36675_video_mode_dsi_tianma_panel.xml|a233663893a03382a58c8513f412f753e8cb05c7
@@ -1135,7 +1135,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
-vendor/bin/thermal-engine|1b275fff739203b566a189fb4247383dd6e76e15
+vendor/bin/thermal-engine|9797282995adbfa87a9bb765e272b63fdb3b36af
 vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
 vendor/lib/libthermalclient.so|31533667b7f8137670189a14c68ccb51c7ca6dab
 vendor/lib/libthermalfeature.so|57b7cb8b92ee3d0002f8884b1379653300ed5d47
@@ -1162,7 +1162,7 @@ vendor/firmware/drv2624.rtp|27e0cb028637b221c1a9967712bc49081ce5e65f
 vendor/firmware/Drv2624Date.ini|f5215284b7b899db83a2bffe6cc9eff1881ec769
 
 # WiFi
-vendor/bin/cnss-daemon|71f1f2056124550d1bef836d3b587e67137600d0
+vendor/bin/cnss-daemon|247a7620e14accdb4e655a2f31f2d970c8265e64
 
 # WiFi Display - from LA.UM.9.1.r1-09600-SMxxx0.0
 -framework/WfdCommon.jar

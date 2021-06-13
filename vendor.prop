@@ -39,8 +39,8 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # HVDCP
 persist.vendor.cp.fcc_main_ua=400000
+persist.vendor.cp.qc3_step_offset_ua=800000
 persist.vendor.cp.taper_term_mv=6500
-persist.vendor.cp.vbus_offset_mv=1040
 
 # IMS
 persist.dbg.volte_avail_ovr=1

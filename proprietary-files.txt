@@ -1151,11 +1151,23 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
 vendor/bin/thermal-engine|9797282995adbfa87a9bb765e272b63fdb3b36af
-vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
 vendor/lib/libthermalclient.so|31533667b7f8137670189a14c68ccb51c7ca6dab
 vendor/lib/libthermalfeature.so|57b7cb8b92ee3d0002f8884b1379653300ed5d47
 vendor/lib64/libthermalclient.so|41274c82e1a472d12b2ebcb4156f7f77b109efa8
 vendor/lib64/libthermalfeature.so|039c92ea5b7532568c63035a51426d9801eaa097
+
+# Thermal [Configs]
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
+vendor/etc/thermal-engine-camera.conf|7d9cc05e42cb6cf7b3835945d3bade5e09d5d0a4
+vendor/etc/thermal-engine-map.conf|fcbe45991ce9553659217e5a5a37f742749115b5
+vendor/etc/thermal-engine-normal.conf|7124b3bfade6977ddba8a003180da85d778646c2
+
+# Thermal [Configs] - curtana
+vendor/etc/thermal-engine-camera.conf:vendor/etc/thermal-engine-camera-curtana.conf|1e1c1a134da13b791b6fe7c3da38c3d86200b47d
+vendor/etc/thermal-engine-normal.conf:vendor/etc/thermal-engine-normal-curtana.conf|e72f56ded309d1c18f9baf68903b5f8451ee5507
+
+# Thermal [Configs] - joyeuse
+vendor/etc/thermal-engine-normal.conf:vendor/etc/thermal-engine-normal-joyeuse.conf|af4bd95c44939ebab18b338cc668f77da1c3de1f
 
 # Time - from LA.UM.9.1.r1-10200-SMxxx0.0
 -vendor/app/TimeService/TimeService.apk

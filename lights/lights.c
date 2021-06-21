@@ -169,26 +169,6 @@ static int set_rgb_led_brightness(enum rgb_led led, int brightness) {
     return write_int(file, brightness);
 }
 
-static int set_rgb_led_timer_trigger(enum rgb_led led, int onMS, int offMS) {
-    char file[48];
-    int rc;
-
-    snprintf(file, sizeof(file), "/sys/class/leds/%s/delay_off", led_names[led]);
-    rc = write_int(file, offMS);
-    if (rc < 0)
-        goto out;
-
-    snprintf(file, sizeof(file), "/sys/class/leds/%s/delay_on", led_names[led]);
-    rc = write_int(file, onMS);
-    if (rc < 0)
-        goto out;
-
-    return 0;
-out:
-    ALOGD("%s doesn't support timer trigger\n", led_names[led]);
-    return rc;
-}
-
 static int set_rgb_led_hw_blink(enum rgb_led led, int blink) {
     char file[48];
 
@@ -217,12 +197,9 @@ static int set_speaker_light_locked(struct light_device_t *dev, struct light_sta
 
     switch (state->flashMode) {
         case LIGHT_FLASH_HARDWARE:
-            rc = set_rgb_led_hw_blink(LED_WHITE, blink);
-            /* fallback to timed blinking if breath is not supported */
-            if (rc == 0)
-                break;
+            blink = 1;
         case LIGHT_FLASH_TIMED:
-            rc = set_rgb_led_timer_trigger(LED_WHITE, onMS, offMS);
+            rc = set_rgb_led_hw_blink(LED_WHITE, blink);
             /* fallback to constant on if timed blinking is not supported */
             if (rc == 0)
                 break;
@@ -302,7 +279,7 @@ static int close_lights(struct light_device_t *dev) {
 /** Open a new instance of a lights device using name */
 static int open_lights(const struct hw_module_t *module, char const *name,
                        struct hw_device_t **device) {
-    int (*set_light)(struct light_device_t * dev, struct light_state_t const *state);
+    int (*set_light)(struct light_device_t *dev, struct light_state_t const *state);
 
     if (0 == strcmp(LIGHT_ID_BACKLIGHT, name)) {
         g_has_persistence_node = !access(PERSISTENCE_FILE, F_OK);

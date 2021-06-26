@@ -21,6 +21,9 @@ on init
     chown system system /dev/spidev0.1
     chmod 0660 /dev/spidev0.1
 
+    # Change permissions for /dev/diag
+    chmod 0666 /dev/diag
+
 on fs
     chmod 0664 /sys/class/thermal/thermal_message/sconfig
     chown system system /sys/class/thermal/thermal_message/sconfig

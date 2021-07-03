@@ -121,9 +121,6 @@ PRODUCT_PACKAGES += \
 # NFC
 TARGET_NFC_SKU := joyeuse
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
-
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/miatoll

@@ -49,7 +49,7 @@ on property:vendor.post_boot.parsed=1
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-5,7
     write /dev/cpuset/background/cpus 2-5
-    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/restricted/cpus 2-5
 
     # Configure CPU frequencies
@@ -61,12 +61,16 @@ on property:vendor.post_boot.parsed=1
     # Configure governor parameters
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_load 90
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 3000
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/pl 1
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load 90
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us 3000
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/pl 1
+
+    # Disable Core control
+    write /sys/devices/system/cpu/cpu0/core_ctl/enable 0
+    write /sys/devices/system/cpu/cpu6/core_ctl/enable 0
 
     # Configure CPU input boost
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800 6:1267200"
@@ -77,9 +81,8 @@ on property:vendor.post_boot.parsed=1
     # Configure scheduler parameters
     write /proc/sys/kernel/sched_downmigrate 85
     write /proc/sys/kernel/sched_upmigrate 95
-    write /proc/sys/kernel/sched_child_runs_first 1
-    write /proc/sys/kernel/sched_tunable_scaling 1
-    write /proc/sys/kernel/sched_conservative_pl 1
+    write /proc/sys/kernel/sched_autogroup_enabled 0
+    write /proc/sys/kernel/sched_walt_rotate_big_tasks 0
 
     # Setup default schedtune values for foreground/top-app
     write /dev/stune/schedtune.boost 0

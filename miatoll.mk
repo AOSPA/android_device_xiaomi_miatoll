@@ -23,7 +23,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.scenario.support=false \
     ro.vendor.audio.sfx.scenario=false \
     ro.vendor.audio.sfx.earadj=false \
-    ro.vendor.audio.soundfx.usb=true
+    ro.vendor.audio.soundfx.usb=true \
+    vendor.audio.offload.buffer.size.kb=256
 
 # Authsecret
 PRODUCT_PACKAGES += \

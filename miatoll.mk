@@ -197,6 +197,9 @@ $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
+# VNDK
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
+
 # WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \

@@ -45,7 +45,7 @@ void set_ro_build_prop(const std::string &source, const std::string &prop,
         prop_name = "ro." + source + "build." + prop;
     }
 
-    property_override(prop_name.c_str(), value.c_str(), false);
+    property_override(prop_name.c_str(), value.c_str(), true);
 }
 
 void set_device_props(const std::string brand, const std::string device, const std::string model) {

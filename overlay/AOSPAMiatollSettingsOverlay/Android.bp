@@ -5,7 +5,7 @@
 //
 
 runtime_resource_overlay {
-    name: "AOSPAMiatollSettings",
+    name: "AOSPAMiatollSettingsOverlay",
     sdk_version: "current",
     vendor: true,
 }

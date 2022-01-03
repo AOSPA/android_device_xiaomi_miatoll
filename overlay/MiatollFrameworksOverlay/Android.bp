@@ -5,7 +5,7 @@
 //
 
 runtime_resource_overlay {
-    name: "AOSPAMiatollFrameworks",
+    name: "MiatollFrameworksOverlay",
     sdk_version: "current",
     vendor: true,
 }

@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Paranoid Android
+# Copyright (C) 2022 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
+    ro.config.vc_call_vol_steps=10 \
     ro.vendor.audio.spk.clean=true \
     ro.vendor.audio.soundfx.type=mi \
     ro.vendor.audio.vocal.support=false \
@@ -113,6 +114,14 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.sys.sf.color_mode=9 \
     persist.sys.sf.color_saturation=1.0 \
     persist.sys.sf.native_mode=2 \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.has_wide_color_display=true \
+    ro.surface_flinger.has_HDR_display=true \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.wcg_composition_dataspace=143261696 \
     ro.vendor.display.sensortype=2 \
     ro.vendor.display.svi=1 \
     vendor.display.disable_rotator_downscale=1 \
@@ -183,16 +192,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.incremental.enable=1
 
-# Init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
-
+# Init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.xiaomi.rc \
     init.xiaomi.perf.rc \
     init.qti.dcvs.sh \
     init.target.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 # Keymaster
 PRODUCT_PACKAGES += \

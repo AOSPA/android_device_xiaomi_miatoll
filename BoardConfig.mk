@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Paranoid Android
+# Copyright (C) 2022 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,21 +13,6 @@
 # limitations under the License.
 
 DEVICE_PATH := device/xiaomi/miatoll
-
-# AVB
-BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
-
-BOARD_AVB_VBMETA_SYSTEM := system product
-BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
-BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # Architecture
 TARGET_ARCH := arm64
@@ -56,23 +41,23 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Display
-TARGET_SCREEN_DENSITY := 440
+TARGET_SCREEN_DENSITY := 420
 
 # Gestures
 TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event1"
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(DEVICE_PATH)/xiaomi_vendor_framework_compatibility_matrix.xml
+    $(DEVICE_PATH)/configs/hidl/xiaomi_vendor_framework_compatibility_matrix.xml
 
 DEVICE_MANIFEST_FILE += \
-    $(DEVICE_PATH)/manifest.xml \
-    $(DEVICE_PATH)/xiaomi_manifest.xml
+    $(DEVICE_PATH)/configs/hidl/manifest.xml \
+    $(DEVICE_PATH)/configs/hidl/xiaomi_manifest.xml
 
 DEVICE_MATRIX_FILE += device/qcom/common/compatibility_matrix.xml
 
 ODM_MANIFEST_SKUS := joyeuse
-ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/manifest-nfc.xml
+ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
 
 # Hacks
 BUILD_BROKEN_DUP_RULES := true
@@ -154,9 +139,24 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
+# Security patch level
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy/vendor
 
-# Security patch level
-VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+# Verified boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
+BOARD_AVB_VBMETA_SYSTEM := system product
+BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1

@@ -213,6 +213,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.keystore_desede=true \
     ro.crypto.volume.filenames_mode=aes-256-cts
 
+# LMK
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.lmk.force_inkernel_lmk=true
+
 # NFC
 TARGET_NFC_SKU := joyeuse
 

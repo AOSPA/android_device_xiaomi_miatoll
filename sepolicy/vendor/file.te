@@ -1,3 +1,6 @@
+# ADSPRPCD
+type public_adsprpcd_file, file_type;
+
 # Audio
 type audio_socket, file_type;
 

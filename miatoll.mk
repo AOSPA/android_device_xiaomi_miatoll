@@ -32,6 +32,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths_wcd937x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd937x.xml \
     $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
+# Authsecret
+PRODUCT_PACKAGES += \
+    android.hardware.authsecret@1.0.vendor
+
 # Biometrics
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -45,7 +49,8 @@ PRODUCT_PACKAGES += \
     libbluetooth_audio_session
 
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth@1.1.vendor \
+    android.hardware.bluetooth.audio@2.1-impl \
     com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
@@ -68,7 +73,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm@1.4-service.clearkey \
+    android.hardware.drm@1.3.vendor
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -115,6 +121,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     KeyHandler
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor \
+    android.hardware.keymaster@4.1.vendor
+
 # NFC
 TARGET_NFC_SKU := joyeuse
 
@@ -124,6 +135,17 @@ PRODUCT_COPY_FILES += \
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/miatoll
+
+# Netmgr
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
+
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor
+
+# Neural networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor
 
 # Overlays
 PRODUCT_PACKAGES += \
@@ -162,9 +184,22 @@ TARGET_COMMON_QTI_COMPONENTS := \
     vibrator \
     wlan
 
+# Radio
+PRODUCT_PACKAGES += \
+    libwpa_client
+
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
+
+# Secure element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2.vendor
 
 # Sensors
 PRODUCT_COPY_FILES += \

@@ -32,6 +32,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths_wcd937x.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd937x.xml \
     $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
+    ro.vendor.audio.spk.clean=true \
+    ro.vendor.audio.soundfx.type=mi \
+    ro.vendor.audio.vocal.support=false \
+    ro.vendor.audio.surround.support=false \
+    ro.vendor.audio.spk.stereo=false \
+    ro.vendor.audio.scenario.support=false \
+    ro.vendor.audio.sfx.scenario=false \
+    ro.vendor.audio.sfx.earadj=false \
+    ro.vendor.audio.soundfx.usb=true
+
 # Authsecret
 PRODUCT_PACKAGES += \
     android.hardware.authsecret@1.0.vendor
@@ -56,6 +68,17 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
+    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
+    persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.scram.enabled=true \
+    persist.vendor.qcom.bluetooth.soc=cherokee \
+    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
+    ro.vendor.bluetooth.wipower=false \
+    vendor.qcom.bluetooth.soc=cherokee
+
 # Camera
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -67,25 +90,53 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64
 
-# Config Store
+PRODUCT_SYSTEM_PROPERTIES += \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
+
+PRODUCT_VENDOR_PROPERTIES += \
+    camera.disable_zsl_mode=1 \
+    ro.hardware.camera=xiaomi
+
+# Charger
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
+# Display / Graphics
 PRODUCT_PACKAGES += \
     disable_configstore
 
 PRODUCT_VENDOR_PROPERTIES += \
+    debug.sf.disable_backpressure=1 \
     persist.sys.sf.color_mode=9 \
     persist.sys.sf.color_saturation=1.0 \
     persist.sys.sf.native_mode=2 \
+    ro.vendor.display.sensortype=2 \
+    ro.vendor.display.svi=1 \
+    vendor.display.disable_rotator_downscale=1 \
+    vendor.display.svi.config=1 \
+    vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
     vendor.display.qdcm.disable_factory_mode=1 \
-    vendor.display.qdcm.mode_combine=1 \
+    vendor.display.qdcm.mode_combine=1
+
+# DPM
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.dpmhalservice.enable=1
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.3.vendor
 
+PRODUCT_VENDOR_PROPERTIES += \
+    drm.service.enabled=true
+
 # Fastboot
 PRODUCT_PACKAGES += \
     fastbootd
+
+# FRP
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # GPS
 LOC_HIDL_VERSION = 4.0
@@ -100,10 +151,22 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# HVDCP
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.cp.fcc_main_ua=400000 \
+    persist.vendor.cp.taper_term_mv=6500 \
+    persist.vendor.cp.vbus_offset_mv=1040
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-qti \
     android.hardware.health@2.1-service
+
+# IMS
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
 
 # IR
 PRODUCT_COPY_FILES += \
@@ -112,6 +175,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
+
+# Incremental FS
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.incremental.enable=1
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -129,6 +196,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor \
     android.hardware.keymaster@4.1.vendor
 
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.hardware.keystore_desede=true \
+    ro.crypto.volume.filenames_mode=aes-256-cts
+
 # NFC
 TARGET_NFC_SKU := joyeuse
 
@@ -138,6 +209,10 @@ PRODUCT_COPY_FILES += \
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/miatoll
+
+# Netflix
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.netflix.bsp_rev=Q6150-17263-1
 
 # Netmgr
 PRODUCT_PACKAGES += \
@@ -162,7 +237,8 @@ PRODUCT_PACKAGES += \
     ParanoidDoze
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.sensor.pickup=xiaomi.sensor.pickup
+    ro.sensor.pickup=xiaomi.sensor.pickup \
+    ro.sensor.proximity=true
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -203,6 +279,17 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor
 
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.radio.add_power_save=1 \
+    persist.vendor.radio.atfwd.start=true \
+    persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.radio.force_on_dc=true \
+    persist.vendor.radio.manual_nw_rej_ct=1 \
+    persist.vendor.radio.mt_sms_ack=30 \
+    persist.vendor.radio.process_sups_ind=1 \
+    persist.vendor.radio.redir_party_num=1 \
+    persist.vendor.radio.report_codec=1
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
@@ -228,14 +315,22 @@ PRODUCT_PACKAGES += \
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# SOC Properties
-PRODUCT_PROPERTY_OVERRIDES += \
+# SoC
+PRODUCT_VENDOR_PROPERTIES += \
     ro.soc.manufacturer=QTI \
     ro.soc.model=SM6250
+
+# SSR
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Thermal
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/thermal/,$(TARGET_COPY_OUT_VENDOR)/etc)
+
+# USB
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.usb.config=mtp,adb
 
 # Vendor
 $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
@@ -249,6 +344,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wlan/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.data.iwlan.enable=true \
+    ro.telephony.iwlan_operation_mode=legacy
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     libavservices_minijail \
@@ -259,3 +358,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+# ZRAM
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.zram.mark_idle_delay_mins=60 \
+    ro.zram.first_wb_delay_mins=180 \
+    ro.zram.periodic_wb_delay_hours=24

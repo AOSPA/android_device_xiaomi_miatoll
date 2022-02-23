@@ -127,9 +127,6 @@ persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
 
-#Expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
-
 #enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
 
@@ -147,6 +144,3 @@ debug.stagefright.ccodec=1
 
 #Property to set native recorder's maximum base layer fps
 ro.media.recorder-max-base-layer-fps = 60
-
-#Battery Property
-ro.charger.enable_suspend = 1

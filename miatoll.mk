@@ -124,10 +124,6 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.target.rc
 
-# Keyhandler
-PRODUCT_PACKAGES += \
-    KeyHandler
-
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor \

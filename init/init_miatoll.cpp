@@ -30,11 +30,11 @@
 using android::base::GetProperty;
 
 std::vector<std::string> ro_props_default_source_order = {
-    "", "odm.", "product.", "system.", "vendor.", "system_ext.",
+        "", "odm.", "product.", "system.", "vendor.", "system_ext.",
 };
 
 void property_override(char const prop[], char const value[], bool add = true) {
-    auto pi = (prop_info *)__system_property_find(prop);
+    auto pi = (prop_info*)__system_property_find(prop);
 
     if (pi != nullptr) {
         __system_property_update(pi, value, strlen(value));
@@ -43,8 +43,8 @@ void property_override(char const prop[], char const value[], bool add = true) {
     }
 }
 
-void set_ro_build_prop(const std::string &source, const std::string &prop,
-                       const std::string &value, bool product = false) {
+void set_ro_build_prop(const std::string& source, const std::string& prop, const std::string& value,
+                       bool product = false) {
     std::string prop_name;
 
     if (product) {
@@ -57,7 +57,7 @@ void set_ro_build_prop(const std::string &source, const std::string &prop,
 }
 
 void set_device_props(const std::string brand, const std::string device, const std::string model) {
-    for (const auto &source : ro_props_default_source_order) {
+    for (const auto& source : ro_props_default_source_order) {
         set_ro_build_prop(source, "brand", brand, true);
         set_ro_build_prop(source, "device", device, true);
         set_ro_build_prop(source, "model", model, true);
@@ -87,12 +87,12 @@ void load_device_properties() {
 }
 
 void load_dalvik_properties() {
-    char const *heapstartsize;
-    char const *heapgrowthlimit;
-    char const *heapsize;
-    char const *heapminfree;
-    char const *heapmaxfree;
-    char const *heaptargetutilization;
+    char const* heapstartsize;
+    char const* heapgrowthlimit;
+    char const* heapsize;
+    char const* heapminfree;
+    char const* heapmaxfree;
+    char const* heaptargetutilization;
     struct sysinfo sys;
 
     sysinfo(&sys);

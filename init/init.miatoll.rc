@@ -22,6 +22,10 @@ on fs
     chmod 0666 /sys/class/thermal/thermal_message/temp_state
     chown system system /sys/class/thermal/thermal_message/temp_state
 
+on post-fs
+    # Apply sensors fix
+    start init-sensors_fix-sh
+
 on post-fs-data
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
@@ -108,3 +112,9 @@ service thermal-engine /vendor/bin/thermal-engine
 on boot && property:ro.product.vendor.device=*
     mount none /vendor/etc/thermal-engine-map-${ro.product.vendor.device}.conf /vendor/etc/thermal-engine-map.conf bind
     enable thermal-engine
+
+service init-sensors_fix-sh /vendor/bin/init.sensors_fix.sh
+    class main
+    user system
+    group system
+    oneshot

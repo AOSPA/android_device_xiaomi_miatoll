@@ -188,6 +188,7 @@ PRODUCT_PACKAGES += \
     init.miatoll.rc \
     init.miatoll.perf.rc \
     init.qti.dcvs.sh \
+    init.sensors_fix.sh \
     init.target.rc
 
 PRODUCT_COPY_FILES += \

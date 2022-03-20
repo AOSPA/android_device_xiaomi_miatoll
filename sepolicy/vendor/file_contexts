@@ -51,3 +51,6 @@
 /vendor/lib64/libst_sr_models\.so                                         u:object_r:same_process_hal_file:s0
 /vendor/lib64/libxmi_high_dynamic_range\.so                               u:object_r:same_process_hal_file:s0
 /vendor/lib64/libxml2_vendor\.so                                          u:object_r:same_process_hal_file:s0
+
+# Sensors Fix script
+/vendor/bin/init\.sensors_fix\.sh                                         u:object_r:vendor_init-qcom-sensors-sh_exec:s0

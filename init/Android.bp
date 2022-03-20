@@ -48,3 +48,9 @@ sh_binary {
     src: "init.qti.dcvs.sh",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.sensors_fix.sh",
+    src: "init.sensors_fix.sh",
+    vendor: true,
+}

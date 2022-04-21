@@ -178,12 +178,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-qti \
     android.hardware.health@2.1-service
 
-# IMS
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1
-
 # IR
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml

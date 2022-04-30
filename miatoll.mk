@@ -314,10 +314,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.radio.redir_party_num=1 \
     persist.vendor.radio.report_codec=1
 
-# RenderScript HAL
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # Secure element
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2.vendor

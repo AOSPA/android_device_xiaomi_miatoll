@@ -303,8 +303,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.radio.add_power_save=1 \
-    persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.data_con_rprt=1 \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.manual_nw_rej_ct=1 \
@@ -368,7 +366,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wlan/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.data.iwlan.enable=true \
     ro.telephony.iwlan_operation_mode=legacy
 
 # WiFi Display

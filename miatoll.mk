@@ -46,10 +46,6 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
-    libbluetooth_audio_session
-
-PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio@2.1-impl \
     com.qualcomm.qti.bluetooth_audio@1.0.vendor \

@@ -289,6 +289,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     telephony \
     usb \
     vibrator \
+    wfd \
     wlan
 
 # Radio
@@ -373,12 +374,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
-    libnl \
     libwfdaac \
     libwfdaac_vendor
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
 
 # ZRAM
 PRODUCT_VENDOR_PROPERTIES += \

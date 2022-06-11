@@ -29,7 +29,7 @@ static const uint16_t kVersion = HARDWARE_MODULE_API_VERSION(2, 1);
 
 using RequestStatus = android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
 
-BiometricsFingerprint* BiometricsFingerprint::sInstance = nullptr;
+BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this;  // keep track of the most recent instance
@@ -46,7 +46,7 @@ BiometricsFingerprint::~BiometricsFingerprint() {
         return;
     }
     int err;
-    if (0 != (err = mDevice->common.close(reinterpret_cast<hw_device_t*>(mDevice)))) {
+    if (0 != (err = mDevice->common.close(reinterpret_cast<hw_device_t *>(mDevice)))) {
         ALOGE("Can't close fingerprint module, error: %d", err);
         return;
     }
@@ -87,7 +87,7 @@ Return<RequestStatus> BiometricsFingerprint::ErrorFilter(int32_t error) {
 
 // Translate from errors returned by traditional HAL (see fingerprint.h) to
 // HIDL-compliant FingerprintError.
-FingerprintError BiometricsFingerprint::VendorErrorFilter(int32_t error, int32_t* vendorCode) {
+FingerprintError BiometricsFingerprint::VendorErrorFilter(int32_t error, int32_t *vendorCode) {
     *vendorCode = 0;
     switch (error) {
         case FINGERPRINT_ERROR_HW_UNAVAILABLE:
@@ -118,7 +118,7 @@ FingerprintError BiometricsFingerprint::VendorErrorFilter(int32_t error, int32_t
 // Translate acquired messages returned by traditional HAL (see fingerprint.h)
 // to HIDL-compliant FingerprintAcquiredInfo.
 FingerprintAcquiredInfo BiometricsFingerprint::VendorAcquiredFilter(int32_t info,
-                                                                    int32_t* vendorCode) {
+                                                                    int32_t *vendorCode) {
     *vendorCode = 0;
     switch (info) {
         case FINGERPRINT_ACQUIRED_GOOD:
@@ -145,7 +145,7 @@ FingerprintAcquiredInfo BiometricsFingerprint::VendorAcquiredFilter(int32_t info
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
-        const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
+    const sp<IBiometricsFingerprintClientCallback> &clientCallback) {
     std::lock_guard<std::mutex> lock(mClientCallbackMutex);
     mClientCallback = clientCallback;
     // This is here because HAL 2.1 doesn't have a way to propagate a
@@ -159,9 +159,9 @@ Return<uint64_t> BiometricsFingerprint::preEnroll() {
     return mDevice->pre_enroll(mDevice);
 }
 
-Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69>& hat,
+Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69> &hat,
                                                     uint32_t gid, uint32_t timeoutSec) {
-    const hw_auth_token_t* authToken = reinterpret_cast<const hw_auth_token_t*>(hat.data());
+    const hw_auth_token_t *authToken = reinterpret_cast<const hw_auth_token_t *>(hat.data());
     return ErrorFilter(mDevice->enroll(mDevice, authToken, gid, timeoutSec));
 }
 
@@ -186,7 +186,7 @@ Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) 
 }
 
 Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
-                                                            const hidl_string& storePath) {
+                                                            const hidl_string &storePath) {
     if (storePath.size() >= PATH_MAX || storePath.size() <= 0) {
         ALOGE("Bad path length: %zd", storePath.size());
         return RequestStatus::SYS_EINVAL;
@@ -202,15 +202,15 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId, 
     return ErrorFilter(mDevice->authenticate(mDevice, operationId, gid));
 }
 
-IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
+IBiometricsFingerprint *BiometricsFingerprint::getInstance() {
     if (!sInstance) {
         sInstance = new BiometricsFingerprint();
     }
     return sInstance;
 }
 
-fingerprint_device_t* getDeviceForVendor(const char* class_name) {
-    const hw_module_t* hw_module = nullptr;
+fingerprint_device_t *getDeviceForVendor(const char *class_name) {
+    const hw_module_t *hw_module = nullptr;
     int err;
 
     err = hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, class_name, &hw_module);
@@ -224,15 +224,15 @@ fingerprint_device_t* getDeviceForVendor(const char* class_name) {
         return nullptr;
     }
 
-    fingerprint_module_t const* fp_module =
-            reinterpret_cast<const fingerprint_module_t*>(hw_module);
+    fingerprint_module_t const *fp_module =
+        reinterpret_cast<const fingerprint_module_t *>(hw_module);
 
     if (fp_module->common.methods->open == nullptr) {
         ALOGE("No valid open method: class %s", class_name);
         return nullptr;
     }
 
-    hw_device_t* device = nullptr;
+    hw_device_t *device = nullptr;
 
     err = fp_module->common.methods->open(hw_module, nullptr, &device);
     if (err) {
@@ -245,18 +245,18 @@ fingerprint_device_t* getDeviceForVendor(const char* class_name) {
         return nullptr;
     }
 
-    fingerprint_device_t* fp_device = reinterpret_cast<fingerprint_device_t*>(device);
+    fingerprint_device_t *fp_device = reinterpret_cast<fingerprint_device_t *>(device);
 
     ALOGI("Loaded fingerprint module: class %s", class_name);
     return fp_device;
 }
 
-void setFpVendorProp(const char* fp_vendor) {
+void setFpVendorProp(const char *fp_vendor) {
     property_set("persist.vendor.sys.fp.vendor", fp_vendor);
 }
 
-fingerprint_device_t* getFingerprintDevice() {
-    fingerprint_device_t* fp_device;
+fingerprint_device_t *getFingerprintDevice() {
+    fingerprint_device_t *fp_device;
 
     fp_device = getDeviceForVendor("fpc");
     if (fp_device == nullptr) {
@@ -279,10 +279,10 @@ fingerprint_device_t* getFingerprintDevice() {
     return nullptr;
 }
 
-fingerprint_device_t* BiometricsFingerprint::openHal() {
+fingerprint_device_t *BiometricsFingerprint::openHal() {
     int err;
 
-    fingerprint_device_t* fp_device;
+    fingerprint_device_t *fp_device;
     fp_device = getFingerprintDevice();
     if (fp_device == nullptr) {
         return nullptr;
@@ -296,9 +296,9 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
     return fp_device;
 }
 
-void BiometricsFingerprint::notify(const fingerprint_msg_t* msg) {
-    BiometricsFingerprint* thisPtr =
-            static_cast<BiometricsFingerprint*>(BiometricsFingerprint::getInstance());
+void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
+    BiometricsFingerprint *thisPtr =
+        static_cast<BiometricsFingerprint *>(BiometricsFingerprint::getInstance());
     std::lock_guard<std::mutex> lock(thisPtr->mClientCallbackMutex);
     if (thisPtr == nullptr || thisPtr->mClientCallback == nullptr) {
         ALOGE("Receiving callbacks before the client callback is registered.");
@@ -317,7 +317,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t* msg) {
         case FINGERPRINT_ACQUIRED: {
             int32_t vendorCode = 0;
             FingerprintAcquiredInfo result =
-                    VendorAcquiredFilter(msg->data.acquired.acquired_info, &vendorCode);
+                VendorAcquiredFilter(msg->data.acquired.acquired_info, &vendorCode);
             ALOGD("onAcquired(%d)", result);
             if (!thisPtr->mClientCallback->onAcquired(devId, result, vendorCode).isOk()) {
                 ALOGE("failed to invoke fingerprint onAcquired callback");
@@ -327,10 +327,10 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t* msg) {
             ALOGD("onEnrollResult(fid=%d, gid=%d, rem=%d)", msg->data.enroll.finger.fid,
                   msg->data.enroll.finger.gid, msg->data.enroll.samples_remaining);
             if (!thisPtr->mClientCallback
-                         ->onEnrollResult(devId, msg->data.enroll.finger.fid,
-                                          msg->data.enroll.finger.gid,
-                                          msg->data.enroll.samples_remaining)
-                         .isOk()) {
+                     ->onEnrollResult(devId, msg->data.enroll.finger.fid,
+                                      msg->data.enroll.finger.gid,
+                                      msg->data.enroll.samples_remaining)
+                     .isOk()) {
                 ALOGE("failed to invoke fingerprint onEnrollResult callback");
             }
             break;
@@ -338,10 +338,9 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t* msg) {
             ALOGD("onRemove(fid=%d, gid=%d, rem=%d)", msg->data.removed.finger.fid,
                   msg->data.removed.finger.gid, msg->data.removed.remaining_templates);
             if (!thisPtr->mClientCallback
-                         ->onRemoved(devId, msg->data.removed.finger.fid,
-                                     msg->data.removed.finger.gid,
-                                     msg->data.removed.remaining_templates)
-                         .isOk()) {
+                     ->onRemoved(devId, msg->data.removed.finger.fid, msg->data.removed.finger.gid,
+                                 msg->data.removed.remaining_templates)
+                     .isOk()) {
                 ALOGE("failed to invoke fingerprint onRemoved callback");
             }
             break;
@@ -349,22 +348,22 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t* msg) {
             if (msg->data.authenticated.finger.fid != 0) {
                 ALOGD("onAuthenticated(fid=%d, gid=%d)", msg->data.authenticated.finger.fid,
                       msg->data.authenticated.finger.gid);
-                const uint8_t* hat = reinterpret_cast<const uint8_t*>(&msg->data.authenticated.hat);
+                const uint8_t *hat =
+                    reinterpret_cast<const uint8_t *>(&msg->data.authenticated.hat);
                 const hidl_vec<uint8_t> token(
-                        std::vector<uint8_t>(hat, hat + sizeof(msg->data.authenticated.hat)));
+                    std::vector<uint8_t>(hat, hat + sizeof(msg->data.authenticated.hat)));
                 if (!thisPtr->mClientCallback
-                             ->onAuthenticated(devId, msg->data.authenticated.finger.fid,
-                                               msg->data.authenticated.finger.gid, token)
-                             .isOk()) {
+                         ->onAuthenticated(devId, msg->data.authenticated.finger.fid,
+                                           msg->data.authenticated.finger.gid, token)
+                         .isOk()) {
                     ALOGE("failed to invoke fingerprint onAuthenticated callback");
                 }
             } else {
                 // Not a recognized fingerprint
                 if (!thisPtr->mClientCallback
-                             ->onAuthenticated(devId, msg->data.authenticated.finger.fid,
-                                               msg->data.authenticated.finger.gid,
-                                               hidl_vec<uint8_t>())
-                             .isOk()) {
+                         ->onAuthenticated(devId, msg->data.authenticated.finger.fid,
+                                           msg->data.authenticated.finger.gid, hidl_vec<uint8_t>())
+                         .isOk()) {
                     ALOGE("failed to invoke fingerprint onAuthenticated callback");
                 }
             }
@@ -373,10 +372,10 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t* msg) {
             ALOGD("onEnumerate(fid=%d, gid=%d, rem=%d)", msg->data.enumerated.finger.fid,
                   msg->data.enumerated.finger.gid, msg->data.enumerated.remaining_templates);
             if (!thisPtr->mClientCallback
-                         ->onEnumerate(devId, msg->data.enumerated.finger.fid,
-                                       msg->data.enumerated.finger.gid,
-                                       msg->data.enumerated.remaining_templates)
-                         .isOk()) {
+                     ->onEnumerate(devId, msg->data.enumerated.finger.fid,
+                                   msg->data.enumerated.finger.gid,
+                                   msg->data.enumerated.remaining_templates)
+                     .isOk()) {
                 ALOGE("failed to invoke fingerprint onEnumerate callback");
             }
             break;

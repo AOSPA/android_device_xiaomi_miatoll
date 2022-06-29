@@ -106,9 +106,3 @@ service thermal-engine /vendor/bin/thermal-engine
 on boot && property:ro.product.vendor.device=*
     mount none /vendor/etc/thermal-engine-map-${ro.product.vendor.device}.conf /vendor/etc/thermal-engine-map.conf bind
     enable thermal-engine
-
-on post-fs && property:ro.boot.hwname=curtana
-    mount none /vendor/lib64/liboemcrypto-curtana.so /vendor/lib64/liboemcrypto.so bind
-
-on post-fs && property:ro.boot.hwname=joyeuse
-    mount none /vendor/lib64/liboemcrypto-curtana.so /vendor/lib64/liboemcrypto.so bind

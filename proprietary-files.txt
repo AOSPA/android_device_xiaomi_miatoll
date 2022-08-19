@@ -676,7 +676,7 @@ vendor/lib64/com.fingerprints.extension@1.0.so|7a356aecd3e458db31fb7ebe4605f55bd
 vendor/lib64/libgf_ca.so|ac46a106c5e3e2f4064bfded65c1002c1e6dc75a
 vendor/lib64/libgf_hal.so|289c029fe4ba30c075a7d22133880535bd555e94
 vendor/lib64/libgoodixhwfingerprint.so|6f7d1e37375e9cbdceb8b172a51daba36aa256d8
-vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so|b2fb17535f499a1be7b2bfc28dc4f7f743beed5e
+vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so|c437af6258736ac42fd6fc3c7b9a51b2b5ee53ef
 
 # FM - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so

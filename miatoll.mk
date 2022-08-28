@@ -202,7 +202,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 # Kernel
-KERNEL_SD_LLVM_SUPPORT := true
+KERNEL_SD_LLVM_SUPPORT := false
 
 # Keymaster
 PRODUCT_PACKAGES += \

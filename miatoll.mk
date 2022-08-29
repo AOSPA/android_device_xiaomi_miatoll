@@ -217,7 +217,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.keystore_desede=true
 
 # LMK
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.lmk.force_inkernel_lmk=true
 
 # NFC

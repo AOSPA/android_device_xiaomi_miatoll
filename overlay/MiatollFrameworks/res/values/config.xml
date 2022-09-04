@@ -56,6 +56,9 @@
         orientation. If zero, the value of rounded_corner_radius is used. -->
     <dimen name="rounded_corner_radius_bottom">93px</dimen>
 
+    <!-- Default paddings for content around the corners. -->
+    <dimen name="rounded_corner_content_padding">16dp</dimen>
+
     <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.

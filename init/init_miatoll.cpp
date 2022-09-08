@@ -22,7 +22,7 @@
 using android::base::GetProperty;
 
 std::vector<std::string> ro_props_default_source_order = {
-    "", "odm.", "product.", "system.", "vendor.", "system_ext.",
+    "", "odm.", "odm_dlkm.", "product.", "system.", "system_ext.", "vendor.", "vendor_dlkm.",
 };
 
 void property_override(char const prop[], char const value[], bool add = true) {

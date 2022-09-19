@@ -98,6 +98,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.disable_backpressure=1 \
+    debug.sf.enable_hwc_vds=1 \
     persist.sys.sf.color_mode=9 \
     persist.sys.sf.color_saturation=1.0 \
     persist.sys.sf.native_mode=2 \

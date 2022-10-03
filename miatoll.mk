@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_ODM_PROPERTIES += \
     persist.vendor.bluetooth.modem_nv_support=true
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
@@ -208,7 +208,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.keystore_desede=true
 
 # LMK
-PRODUCT_VENDOR_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES_PROPERTIES += \
     ro.vendor.lmk.force_inkernel_lmk=true
 
 # NFC

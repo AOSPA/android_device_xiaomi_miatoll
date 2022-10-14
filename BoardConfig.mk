@@ -46,8 +46,6 @@ DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/hidl/manifest.xml \
     $(DEVICE_PATH)/configs/hidl/xiaomi_manifest.xml
 
-DEVICE_MATRIX_FILE += device/qcom/common/compatibility_matrix.xml
-
 ODM_MANIFEST_SKUS := joyeuse
 ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
 

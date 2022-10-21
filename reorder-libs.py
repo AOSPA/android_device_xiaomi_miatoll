@@ -1,22 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021-2022 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import re, sys
 from functools import cmp_to_key
 from locale import LC_ALL, setlocale, strcoll
 from pathlib import Path
 
-FILES = [Path(file) for file in [
-    "proprietary-files.txt",
-]]
-
-setlocale(LC_ALL, "C")
-
-def removeprefix(string: str, prefix: str) -> str:
-    return string[len(prefix):] if string.startswith(prefix) else string
 
 def strcoll_extract_utils(string1: str, string2: str) -> int:
     # Skip logic if one of the string if empty
@@ -25,11 +18,11 @@ def strcoll_extract_utils(string1: str, string2: str) -> int:
 
     # Remove '-' from strings if there,
     # it is used to indicate a build target
-    string1 = removeprefix(string1, '-')
-    string2 = removeprefix(string2, '-')
+    string1 = re.sub("^-", "", string1)
+    string2 = re.sub("^-", "", string2)
 
     # If no directories, compare normally
-    if not "/" in string1 and not "/" in string2:
+    if "/" not in string1 and "/" not in string2:
         return strcoll(string1, string2)
 
     string1_dir = string1.rsplit("/", 1)[0] + "/"
@@ -51,19 +44,23 @@ def strcoll_extract_utils(string1: str, string2: str) -> int:
     # Compare normally
     return strcoll(string1, string2)
 
-for file in FILES:
-    if not file.is_file():
-        print(f"File {str(file)} not found")
-        continue
 
-    with open(file, 'r') as f:
-        sections = f.read().split("\n\n")
+if __name__ == "__main__":
+    setlocale(LC_ALL, "C")
 
-    ordered_sections = []
-    for section in sections:
-        section_list = [line.strip() for line in section.splitlines()]
-        section_list.sort(key=cmp_to_key(strcoll_extract_utils))
-        ordered_sections.append("\n".join(section_list))
+    for file in sys.argv[1:] or ["proprietary-files.txt"]:
+        if not Path(file).is_file():
+            print(f"File {file} not found")
+            continue
 
-    with open(file, 'w') as f:
-        f.write("\n\n".join(ordered_sections).strip() + "\n")
+        with open(file, "r") as f:
+            sections = f.read().split("\n\n")
+
+        ordered_sections = []
+        for section in sections:
+            section_list = [line.strip() for line in section.splitlines()]
+            section_list.sort(key=cmp_to_key(strcoll_extract_utils))
+            ordered_sections.append("\n".join(section_list))
+
+        with open(file, "w") as f:
+            f.write("\n\n".join(ordered_sections).strip() + "\n")

@@ -8,13 +8,11 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter miatoll,$(TARGET_DEVICE)),)
 
-# Symlinks
-CNE_SYMLINKS := $(TARGET_OUT_VENDOR_APPS)/CneApp/lib/arm64/
-$(CNE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@rm -rf $@
-	@mkdir -p $(dir $@)/vendor/lib64
-	$(hide) ln -sf /vendor/lib64/libvndfwk_detect_jni.qti.so $@/libvndfwk_detect_jni.qti.so
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
+include $(CLEAR_VARS)
+
+# Symlinks
 EGL_LIBRARIES := \
 	libEGL_adreno.so \
 	libGLESv2_adreno.so \
@@ -76,13 +74,6 @@ $(RFS_MSM_SLPI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /mnt/vendor/persist/hlos_rfs/shared $@/hlos
 	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
 
-WLAN_FIRMWARE_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld
-$(WLAN_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	mkdir -p $@/qca6390
-	@echo "Creating WLAN firmware symlinks: $@"
-	$(hide) ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/WCNSS_qcom_cfg.ini
-	$(hide) ln -sf /mnt/vendor/persist/wlan_mac.bin $@/wlan_mac.bin
-
 ALL_DEFAULT_INSTALLED_MODULES += \
     $(CNE_SYMLINKS) \
     $(EGL_32_SYMLINKS) \
@@ -93,5 +84,13 @@ ALL_DEFAULT_INSTALLED_MODULES += \
     $(RFS_MSM_MPSS_SYMLINKS) \
     $(RFS_MSM_SLPI_SYMLINKS) \
     $(WLAN_FIRMWARE_SYMLINKS)
+
+# WiFi firmware symlinks
+WLAN_FIRMWARE_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld
+$(WLAN_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	mkdir -p $@/qca6390
+	@echo "Creating WLAN firmware symlinks: $@"
+	$(hide) ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/WCNSS_qcom_cfg.ini
+	$(hide) ln -sf /mnt/vendor/persist/wlan_mac.bin $@/wlan_mac.bin
 
 endif

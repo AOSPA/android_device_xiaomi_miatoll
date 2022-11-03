@@ -249,7 +249,8 @@ PRODUCT_PACKAGES += \
     AOSPAMiatollFrameworksOverlay \
     AOSPAMiatollSettingsOverlay \
     MiatollFrameworksOverlay \
-    MiatollSystemUIOverlay
+    MiatollSystemUIOverlay \
+    MiatollWifiOverlay
 
 # ParanoidDoze
 PRODUCT_PACKAGES += \

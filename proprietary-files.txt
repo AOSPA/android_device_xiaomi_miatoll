@@ -626,7 +626,6 @@ vendor/lib64/libbase64.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libminkdescriptor.so
 vendor/lib64/libminksocket.so
 vendor/lib64/libops.so
 vendor/lib64/libpvr.so
@@ -687,7 +686,6 @@ vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy
 vendor/etc/seccomp_policy/gnss@2.0-xtwifi-inet-agent.policy
 vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 vendor/etc/apdr.conf
-vendor/etc/cacert_location.pem
 vendor/etc/izat.conf
 vendor/etc/lowi.conf
 vendor/etc/sap.conf

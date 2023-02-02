@@ -245,6 +245,7 @@ PRODUCT_PACKAGES += \
     AOSPAMiatollFrameworksOverlay \
     AOSPAMiatollSettingsOverlay \
     MiatollFrameworksOverlay \
+    MiatollSettingsOverlay \
     MiatollSystemUIOverlay \
     MiatollWifiOverlay
 

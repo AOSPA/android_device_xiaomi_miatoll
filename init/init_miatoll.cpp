@@ -48,12 +48,17 @@ void set_ro_build_prop(const std::string &source, const std::string &prop,
     property_override(prop_name.c_str(), value.c_str(), true);
 }
 
-void set_device_props(const std::string brand, const std::string device, const std::string model) {
+void set_device_props(const std::string fingerprint, const std::string description,
+                      const std::string brand, const std::string device, const std::string model) {
     for (const auto &source : ro_props_default_source_order) {
+        set_ro_build_prop(source, "fingerprint", fingerprint);
         set_ro_build_prop(source, "brand", brand, true);
         set_ro_build_prop(source, "device", device, true);
         set_ro_build_prop(source, "model", model, true);
     }
+
+    property_override("ro.build.fingerprint", fingerprint.c_str());
+    property_override("ro.build.description", description.c_str());
 }
 
 void load_device_properties() {
@@ -63,20 +68,35 @@ void load_device_properties() {
 
     if (hwname == "curtana") {
         if (region == "Global_TWO" || region == "Japan") {
-            set_device_props("Redmi", "curtana", "Redmi Note 9S");
+            set_device_props(
+                "Redmi/curtana_global/curtana:12/RKQ1.211019.001/V13.0.2.0.SJWMIXM:user/release-keys",
+                "qssi-user 12 SKQ1.211019.001 V13.0.2.0.SJWMIXM release-keys", "Redmi", "curtana",
+                "Redmi Note 9S");
             property_override("bluetooth.device.default_name", "Redmi Note 9S");
         } else if (region == "India") {
-            set_device_props("Redmi", "curtana", "Redmi Note 9 Pro");
+            set_device_props(
+                "Redmi/curtana/curtana:12/RKQ1.211019.001/V13.0.1.0.SJWINXM:user/release-keys",
+                "qssi-user 12 SKQ1.211019.001 V13.0.1.0.SJWINXM release-keys", "Redmi", "curtana",
+                "Redmi Note 9 Pro");
             property_override("bluetooth.device.default_name", "Redmi Note 9 Pro");
         }
     } else if (hwname == "excalibur") {
-        set_device_props("Redmi", "excalibur", "Redmi Note 9 Pro Max");
+        set_device_props(
+            "Redmi/excalibur_in/excalibur:12/RKQ1.211019.001/V13.0.1.0.SJXINXM:user/release-keys",
+            "qssi-user 12 SKQ1.211019.001 V13.0.1.0.SJXINXM release-keys", "Redmi", "excalibur",
+            "Redmi Note 9 Pro Max");
         property_override("bluetooth.device.default_name", "Redmi Note 9 Pro Max");
     } else if (hwname == "gram") {
-        set_device_props("POCO", "gram", "POCO M2 Pro");
+        set_device_props(
+            "POCO/gram_in/gram:12/RKQ1.211019.001/V13.0.1.0.SJPINXM:user/release-keys",
+            "qssi-user 12 SKQ1.211019.001 V13.0.1.0.SJPINXM release-keys", "POCO", "gram",
+            "POCO M2 Pro");
         property_override("bluetooth.device.default_name", "POCO M2 Pro");
     } else if (hwname == "joyeuse") {
-        set_device_props("Redmi", "joyeuse", "Redmi Note 9 Pro");
+        set_device_props(
+            "Redmi/joyeuse_global/joyeuse:12/RKQ1.211019.001/V13.0.1.0.SJZMIXM:user/release-keys",
+            "qssi-user 12 SKQ1.211019.001 V13.0.1.0.SJZMIXM release-keys", "Redmi", "joyeuse",
+            "Redmi Note 9 Pro");
         property_override("bluetooth.device.default_name", "Redmi Note 9 Pro");
     }
     property_override("vendor.boot.hwversion", hwversion.c_str());

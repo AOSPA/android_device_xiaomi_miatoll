@@ -37,8 +37,6 @@ vendor/lib/rfsa/adsp/libsns_device_mode_skel.so|733a5b8861bb6eb1285bb8982992531c
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so|c30bb30eecf968e02f72c055d3cc13a7f769644f
 vendor/lib/rfsa/adsp/misound_res.bin|cabab999b2a7f9b79f48a4405004480f60cbb049
 vendor/lib/rfsa/adsp/tas25xx_TI_0.bin|6fbbc916fd4d31321199fc01aaff3d8e720f6197
-vendor/lib64/rfsa/adsp/libsns_device_mode_skel.so|733a5b8861bb6eb1285bb8982992531c94800997
-vendor/lib64/rfsa/adsp/libsns_low_lat_stream_skel.so|c30bb30eecf968e02f72c055d3cc13a7f769644f
 
 # Alarm - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 product/app/PowerOffAlarm/PowerOffAlarm.apk
@@ -48,11 +46,13 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# ANT+ - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
-vendor/lib/hw/com.dsi.ant@1.0-impl.so
-vendor/lib64/hw/com.dsi.ant@1.0-impl.so
-
 # Audio
+vendor/lib/soundfx/libasphere.so|b2daeb875914a33575c7d7a67429f25d09d35489
+vendor/lib/soundfx/libmisoundfx.so|1fccae9dd8fe72632236096dfd20dbd8c7fd4740
+vendor/lib/soundfx/libqcompostprocbundle.so|7c6897147b61c6cb741ed754f1f29555a828e81e
+vendor/lib/soundfx/libqcomvisualizer.so|7b0bb65e2d410f21af3afbd82ce6c639ace99965
+vendor/lib/soundfx/libqcomvoiceprocessing.so|794223b1b5651eb304fb97b33dc9f07cb4de42f2
+vendor/lib/soundfx/libshoebox.so|214d5fefd21c617bdfa05255fe667127b4242556
 vendor/lib/liba2dpoffload.so|4fdb44b059cf32462e79b0859503c92072e7ec3e
 vendor/lib/libacdb-fts.so|d734a745b6a89ae3af0db962fae2c245e7be5d61
 vendor/lib/libacdbloader.so|5eb8bd39378cf5c4a2f32ec0d6d48e3d99128c4b
@@ -76,26 +76,6 @@ vendor/lib/libsndmonitor.so|911e89f13cbfd6d197c98327a2d024a943655ffc
 vendor/lib/libspkrprot.so|5e7abfcbdd6152cdaea70c6bd7c3528fbc046790
 vendor/lib/libssrec.so|0d3c66c07fb95349117e7143faafa54d0063eac3
 vendor/lib/libsurround_3mic_proc.so|e8e086123e0c1dc17f008f97edb3611cd4c702e1
-vendor/lib64/liba2dpoffload.so|a2712af43340285c300658d15f40c01228d4eb98
-vendor/lib64/libacdb-fts.so|b606fbfadd0410ac774b76358f3232e54ba54c9f
-vendor/lib64/libacdbloader.so|31cf8de1af14d8cb8d74fcc036822cefd0efa3ca
-vendor/lib64/libacdbrtac.so|3fa9be74ff7e26f17005f70df0f2c35cce7ab328
-vendor/lib64/libadiertac.so|0bfed81828a7cbd07c55c01967462aaec1d32e17
-vendor/lib64/libaudcal.so|685eae44e26be6bfd53bd1476a69c01ab4398923
-vendor/lib64/libaudioalsa.so|361b3de1f094cc0943add1ef7040ffeadc5dbdcb
-vendor/lib64/libaudioconfigstore.so|781b4f6141a9066327ed7589613ae2546fdad8e9
-vendor/lib64/libaudioparsers.so|400a4157bcd70ea33679904a7d130988e436d2f6
-vendor/lib64/libbatterylistener.so|def3ac442610f8c4098e03467d479e3ab3c77753
-vendor/lib64/libcirrusspkrprot.so|86ee47e7c30b45d651d8df25ca29ab8a6f988086
-vendor/lib64/libcomprcapture.so|9a0b1a9126e5cc8d1e5694bfafae38c1e32800f8
-vendor/lib64/libexthwplugin.so|3edf701f724cce974f30598934ab6293feb3f6b2
-vendor/lib64/libhdmiedid.so|26489dbd82e6383d19144ff78ad067e4240d0cde
-vendor/lib64/libhdmipassthru.so|44d720b9f856abdfcfaaec7814ba20ff853e0f40
-vendor/lib64/libhfp.so|43c5d7a6f176c22ae002a3122096946265409fec
-vendor/lib64/libqtigef.so|f5b4266dc30bdddf09b5c1215f3c01e628be22b0
-vendor/lib64/libsndmonitor.so|752f8280eeae8fa1289e4be6d5c526c769a94c0a
-vendor/lib64/libspkrprot.so|32225c2984f381dd1fdb8b7ac473db5dac7aeadf
-vendor/lib64/libssrec.so|040b048784d756c1b550b1bb6fd214125099a7f0
 
 # Audio calibration
 vendor/etc/acdbdata/IDP/atoll-wcd937x-snd-card/IDP_WCD937X_Bluetooth_cal.acdb|4edb14f1f886c177ef8469194a5dff9f1b28e836
@@ -116,28 +96,12 @@ vendor/etc/acdbdata/IDP/IDP_Speaker_cal.acdb|8a80a6a890a372214739fedd20149b617ce
 vendor/etc/acdbdata/IDP/IDP_workspaceFile.qwsp|746f937fb06994665f47ee748de57f410da58b25
 vendor/etc/acdbdata/adsp_avs_config.acdb|c84e803f04af9b2d4cd7aade1e8e7a55cfecabc3
 
-# Audio FX modules
-vendor/lib/soundfx/libasphere.so|b2daeb875914a33575c7d7a67429f25d09d35489
-vendor/lib/soundfx/libmisoundfx.so|1fccae9dd8fe72632236096dfd20dbd8c7fd4740
-vendor/lib/soundfx/libqcompostprocbundle.so|7c6897147b61c6cb741ed754f1f29555a828e81e
-vendor/lib/soundfx/libqcomvisualizer.so|7b0bb65e2d410f21af3afbd82ce6c639ace99965
-vendor/lib/soundfx/libqcomvoiceprocessing.so|794223b1b5651eb304fb97b33dc9f07cb4de42f2
-vendor/lib/soundfx/libshoebox.so|214d5fefd21c617bdfa05255fe667127b4242556
-vendor/lib64/soundfx/libasphere.so|b9296f601776e631be0f347f8f10d26689103d12
-vendor/lib64/soundfx/libqcompostprocbundle.so|7d7efc80d72495753cd323cc0b7e8dd9d4def4e8
-vendor/lib64/soundfx/libqcomvisualizer.so|1003ef552e07c0084bfcff4ed18593a896d61ae4
-vendor/lib64/soundfx/libqcomvoiceprocessing.so|6d5dce6ab6072921140934ca7004448cee30e5e6
-vendor/lib64/soundfx/libshoebox.so|37c60f9b0c8d451e118c351215f8234d7f6b82af
-
 # Audio HAL
 vendor/lib/hw/audio.primary.atoll.so|aa819d7e31dd744280e56eca541c4e3ca616191a
 vendor/lib/libaudio_log_utils.so|007f0e1136d3ca422c9b6c59f7fbcc4588394d87
-vendor/lib64/hw/audio.primary.atoll.so|48e1302c3a3238a89bc4fb543b86ba0c8e13304f
-vendor/lib64/libaudio_log_utils.so|18af6e4a9895692ee9a9777aff80b428d8388920
 
 # Audio HAL Ext
 system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so|6ef1a008124b35343ceb812d3da6ba6560431b05
-system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so|bf5740ac09ddb7c29f6cd63dc5e37e11c75d2c06
 
 # Battery
 vendor/bin/batterysecret|c653ff3305229b3c2bd99162fbe35118de35abeb
@@ -150,10 +114,6 @@ vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
-vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbluetooth_audio_session_qti_2_1.so
@@ -163,6 +123,7 @@ vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
@@ -488,10 +449,8 @@ vendor/bin/cdsprpcd
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
 vendor/lib/libcdsp_default_listener.so
 vendor/lib/libcdsprpc.so
-vendor/lib/libsysmon_cdsp_skel.so
 vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
-vendor/lib64/libsysmon_cdsp_skel.so
 
 # CNE - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 vendor/app/CneApp/CneApp.apk
@@ -789,7 +748,6 @@ vendor/firmware/ipa_fws.elf|f9b22d68f3505aade34b58b3b427d6d65f7c93b2
 vendor/firmware/ipa_fws.mdt|6435769e5746ea166984cfc2300428959a4db62c
 
 # IR
-vendor/lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.atoll.so|e14c0c7db512f809cef9f4644b29209f2a87672a
 vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.atoll.so|bb96104803e2468d7982e6955dad14e6bd739939
 
 # Keymaster
@@ -811,58 +769,60 @@ vendor/lib/libgcs-osal.so|2f1ff749e6c2210d715486ac0d01046f2aa93abc
 vendor/lib/libgcs.so|1d0ad8798e26d9b67ac87c29bf169ae9dc1670c5
 vendor/lib/liblistensoundmodel2.so|1cebe1bfc1758378e08ec6d0bb90d08216e26639
 vendor/lib/libmulawdec.so|89ebb1d9e77911f1abe37405016839d8436a9825
-vendor/lib64/hw/sound_trigger.primary.atoll.so|e95e4689659d922a30dfbfc44780fd3d8f5f8da9
-vendor/lib64/libcapiv2svacnn.so|f35b1f7ce1e2e2a32f51a2c9296a64977d3a6113
-vendor/lib64/libcapiv2vop.so|13a1072a9e9479a80bfeb57ded2a0e63d6c8b35b
-vendor/lib64/libgcs-calwrapper.so|9ed70a1fddd176791ff84c974df3ce32558d2061
-vendor/lib64/libgcs-ipc.so|f750579dc763d6952ba5e8c7815ecddf2719b2b6
-vendor/lib64/libgcs-osal.so|6563b261374b1cf54ce1eaf4eda4b98ea2a0ecd7
-vendor/lib64/libgcs.so|aad228b7a8cfc930b002670ec09d46286d7d719f
-vendor/lib64/liblistensoundmodel2.so|d8f54bd750bd536bca8dd91534c69f00ed84a9ab
-vendor/lib64/libmulawdec.so|9a21d843c7bd2a516e0f1ce375855b767947b314
 
-# Media - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libFlacSwDec.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAlacDecSw.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxApeDecSw.so
-vendor/lib/libOmxDsdDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxVideoDSMode.so
-vendor/lib/libOmxWmaDec.so
-vendor/lib/libdsd2pcm.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal.so
-vendor/lib/vendor.qti.hardware.vpp@1.1.so
-vendor/lib/vendor.qti.hardware.vpp@1.2.so
-vendor/lib/vendor.qti.hardware.vpp@1.3.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
-vendor/lib64/libI420colorconvert.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAlacDecSw.so
-vendor/lib64/libOmxAmrwbplusDec.so
-vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxApeDecSw.so
-vendor/lib64/libOmxEvrcDec.so
-vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libOmxSwVdec.so
-vendor/lib64/libOmxSwVencMpeg4.so
-vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libmmosal.so
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so
-vendor/lib64/vendor.qti.hardware.vpp@1.2.so
-vendor/lib64/vendor.qti.hardware.vpp@1.3.so
+# Media
+vendor/etc/seccomp_policy/mediacodec.policy|74909794ce0d0a7ef17d3305672aa89bb862c196
+vendor/etc/media_codecs.xml|0dfaa8a4393b0c8053758e14c2456b6b794b55be
+vendor/etc/media_codecs_performance.xml|f3b5d85fe9a87abd99731ad3bb20d2d90fd54597
+vendor/etc/media_codecs_vendor.xml|e1098faa38d3f64316cca0b76623c7246dc2323a
+vendor/etc/media_codecs_vendor_audio.xml|d64ca67bc0cfd94bfd6936d2b437ff6eb1669f70
+vendor/etc/media_profiles.xml|981dd4a7ffb9020aa1142930ff3ae6d07bda12aa
+vendor/etc/media_profiles_vendor.xml|71d02043b1acfa70c29bb8aa3d253a7e5b76d475
+vendor/etc/system_properties.xml|47fb908c0683e501ea698959223cd9c6f745e40e
+vendor/lib/libAlacSwDec.so|cb41b0945e57b349e6aa476cdac4315ee13a2def
+vendor/lib/libApeSwDec.so|ce425ef9372ed6635e313422b3578f77b90ff526
+vendor/lib/libFlacSwDec.so|6b17d0965c9f8bddab3ffd59e7bb16e92bb68d85
+vendor/lib/libI420colorconvert.so|75e937bd1ce2f9c59fe41b2783a4df3949244243
+vendor/lib/libOmxAacDec.so|57df45d7ac7699c54f2c6695b1d53d2f088bcd8e
+vendor/lib/libOmxAlacDec.so|7ffd1c4e0ab0b3fa1f97260e8d17927eaf8f7499
+vendor/lib/libOmxAlacDecSw.so|150f1fee193918792a88797766ddf12d1a388efd
+vendor/lib/libOmxAmrwbplusDec.so|89870b1103f71264b0ed8504c32facbd2b7bed7d
+vendor/lib/libOmxApeDec.so|dccf34e05c50b480a43da6cfd4ba805b29f7dda5
+vendor/lib/libOmxApeDecSw.so|f3e64e54808f57f146173532335ea45db1fb54f4
+vendor/lib/libOmxDsdDec.so|f74936badeb8303b2bb17475b9cd157b1c81131c
+vendor/lib/libOmxEvrcDec.so|f8d6691be74ccf17a10c47411b5ca9d7ee38210e
+vendor/lib/libOmxQcelp13Dec.so|a2d7c8a4197a34f28ed1e526fe271103e3f84bbb
+vendor/lib/libOmxVideoDSMode.so|203ee6dd7bd416d4034c4eb82caed077580c458b
+vendor/lib/libOmxWmaDec.so|baa6f92c3a2f83836cfa46ffca837abaa70fe22b
+vendor/lib/libdsd2pcm.so|c5ab1afd7a5a23bf83d80b5ac74247c3dd2085af
+vendor/lib/libmm-color-convertor.so|5247118f175c9412bcff7cd4b7262cedee7f30a0
+vendor/lib/libmmosal.so|b5fc0fae23c5f17cdf444cf72986c45187b2f6aa
+vendor/lib/libstagefright_soft_qtiflacdec.so|19070e5ec50967cfe8d10ed100622bdcf565b948
+vendor/lib/vendor.qti.hardware.vpp@1.1.so|3e0467d0c30bb6cccab12d2e67dacc5ea852b3df
+vendor/lib/vendor.qti.hardware.vpp@1.2.so|d1226cfbeee864b7cac52bcee37fdf4524892fd6
+vendor/lib/vendor.qti.hardware.vpp@1.3.so|6ff4979c9632ce9f244aeba7a0804332328f3fa9
+vendor/lib64/libAlacSwDec.so|e520eafd5dd9ee29456b60f4668ea94394a61a63
+vendor/lib64/libApeSwDec.so|76d3cc02ca1c3cdc3c71e57dc6e53027d2bf3d37
+vendor/lib64/libFlacSwDec.so|c16096dee817ba98a5a7b79ae358ae0db27fe237
+vendor/lib64/libI420colorconvert.so|7c003441a23afed5c53c4b6e6743dc3341122b93
+vendor/lib64/libOmxAacDec.so|4129514c40ef43fc93d077cff415f290e958ab91
+vendor/lib64/libOmxAlacDec.so|e632660963833eec6745814b8f5e6405d073ce49
+vendor/lib64/libOmxAlacDecSw.so|3ecf891368d0ad84903b792303ef841dc24f91c1
+vendor/lib64/libOmxAmrwbplusDec.so|aa756e72f61418539bcff30b5a91bea260012830
+vendor/lib64/libOmxApeDec.so|76527bacda8ca1dca8acf2de5c9c472d691340c9
+vendor/lib64/libOmxApeDecSw.so|6ec15cb9a251a35e7f7d427dcf0b0e945825518f
+vendor/lib64/libOmxEvrcDec.so|0197a5f9f0cea286bb8420df6b66e6c7c50c6f98
+vendor/lib64/libOmxQcelp13Dec.so|3144db8164996864d5b8ad6360c072bd04110adf
+vendor/lib64/libOmxSwVdec.so|e518e2174917e4412de06aced5b13e6ee9c101ed
+vendor/lib64/libOmxSwVencMpeg4.so|6966cfb1fc6da3ae845463e58af1ff2efe92fa69
+vendor/lib64/libOmxWmaDec.so|6294ff7b072358611d79186f2baa35b4071dc966
+vendor/lib64/libmm-color-convertor.so|f404d2a1070a4f863c116e6defb5314d964d9269
+vendor/lib64/libmmosal.so|595faff0767dc2bd0a344a98ab65a239bed14826
+vendor/lib64/libstagefright_soft_qtiflacdec.so|1e1b817c97cc638da0175797c532c77564b303ff
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so|e336f4a3d0a50ee985639db6a8a70ec9817144ee
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so|7ae61a9c75d4a17f0aad5969ce1a27cd5b0552ae
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so|85a4e2ca843525db5c76486dbee4c5c7a672ee8d
+vendor/odm/etc/media_profiles_V1_0.xml|981dd4a7ffb9020aa1142930ff3ae6d07bda12aa
 
 # Neural-networks - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti
@@ -877,7 +837,7 @@ vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
-vendor/etc/libnfc-nxp.conf|d890da533846f17e665942a99197c029387d323c
+vendor/etc/libnfc-nxp.conf|cff1a68e333bd6c740de1165248c3ec4a41d1bde
 vendor/lib/libpn553_fw.so|a8e29cc3ebb2e0df0fb505fc2da9c69a015680fb
 
 # NFC (Secure Element) - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0

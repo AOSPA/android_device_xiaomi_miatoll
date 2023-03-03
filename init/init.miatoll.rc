@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 Paranoid Android
+# Copyright (C) 2023 Paranoid Android
 #
 # SPDX-License-Identifier: Apache-2.0
 #

@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2022 Paranoid Android
+// Copyright (C) 2023 Paranoid Android
 // Copyright (C) 2020 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
@@ -23,15 +23,15 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.xiaomi.rc",
-    src: "init.xiaomi.rc",
+    name: "init.miatoll.rc",
+    src: "init.miatoll.rc",
     sub_dir: "init",
     vendor: true,
 }
 
 prebuilt_etc {
-    name: "init.xiaomi.perf.rc",
-    src: "init.xiaomi.perf.rc",
+    name: "init.miatoll.perf.rc",
+    src: "init.miatoll.perf.rc",
     sub_dir: "init",
     vendor: true,
 }

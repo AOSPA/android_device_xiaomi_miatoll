@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (C) 2022 Paranoid Android
+ * Copyright (C) 2023 Paranoid Android
  * Copyright (C) 2020 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
@@ -21,6 +21,7 @@
 
 using android::base::GetProperty;
 
+// list of partitions to override props
 std::vector<std::string> ro_props_default_source_order = {
     "", "odm.", "odm_dlkm.", "product.", "system.", "system_ext.", "vendor.", "vendor_dlkm.",
 };
@@ -63,6 +64,7 @@ void set_device_props(const std::string fingerprint, const std::string descripti
 }
 
 void load_device_properties() {
+    // Detect variant and override properties
     std::string hwname = GetProperty("ro.boot.hwname", "");
     std::string region = GetProperty("ro.boot.hwc", "");
     std::string hwversion = GetProperty("ro.boot.hwversion", "");

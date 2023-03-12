@@ -140,6 +140,8 @@ on property:sys.shutdown.requested=*
 on charger
     setprop sys.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
+    chown system system /sys/class/leds/white/brightness
+    write /sys/class/leds/white/brightness 255
 
 on property:vendor.display.lcd_density=640
    setprop dalvik.vm.heapgrowthlimit 512m

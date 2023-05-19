@@ -352,6 +352,10 @@ vendor/etc/camera/watermark_font_2300_3199.dat
 vendor/firmware/CAMERA_ICP.elf
 vendor/firmware/osc_rtp_24K_5s.bin
 
+# Camera provider
+vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
+vendor/lib64/vendor.qti.hardware.camera.device@3.5.so
+
 # Camera sensors
 vendor/lib64/camera/com.qti.eeprom.sunny_gc8034.so
 vendor/lib64/camera/com.qti.sensor.curtana_gc02m1.so
@@ -396,7 +400,7 @@ vendor/lib64/camera/fdconfigpreviewlite.bin
 vendor/lib64/camera/fdconfigvideo.bin
 vendor/lib64/camera/fdconfigvideolite.bin
 
-# Camera sensors - curtana & gram - from curtana
+# Camera sensors - curtana & gram
 vendor/lib64/camera/com.qti.sensormodule.ofilm_gc02m1_filter.bin
 vendor/lib64/camera/com.qti.sensormodule.ofilm_s5kgm2.bin
 vendor/lib64/camera/com.qti.sensormodule.sunny_imx582.bin
@@ -418,7 +422,7 @@ vendor/lib64/camera/com.qti.sensormodule.sunny_s5kgw1_mirrorflip.bin
 vendor/lib64/camera/com.qti.tuned.sunny_gc02m1.bin
 vendor/lib64/camera/com.qti.tuned.sunny_s5kgw1.bin
 
-# Camera sensors - excalibur - from excalibur
+# Camera sensors - excalibur
 vendor/lib64/camera/com.qti.sensormodule.sunny_ov32a1q.bin
 vendor/lib64/camera/com.qti.tuned.sunny_ov32a1q.bin
 
@@ -1159,16 +1163,18 @@ vendor/firmware/focaltech_ts_fw_huaxing.bin
 vendor/firmware/novatek_ts_tianma_fw.bin
 vendor/firmware/novatek_ts_tianma_mp.bin
 
-# Vibrator firmware - from V12.5.8.0.RJZEUXM
-vendor/bin/vibrator_calibration|f5968716070b226748fe89cca1d27965c84f33f8
-vendor/firmware/Drv2624Date.ini|f5215284b7b899db83a2bffe6cc9eff1881ec769
-vendor/firmware/aw8624_haptic.bin|5a9f97ba7811bbd296aca78d32dff6427c2ed355
-vendor/firmware/aw8624_rtp.bin|3c06255839cd1884e8d9826952e9bfc7842dc671
-vendor/firmware/drv2624.bin|15ffeb248386181ccf6895726a618c8f7a579dd5
-vendor/firmware/drv2624.rtp|27e0cb028637b221c1a9967712bc49081ce5e65f
+# Vibrator firmware
+vendor/bin/vibrator_calibration
+vendor/firmware/Drv2624Date.ini
+vendor/firmware/aw8624_haptic.bin
+vendor/firmware/aw8624_rtp_1.bin
+vendor/firmware/drv2624.bin
+vendor/firmware/drv2624.rtp
 
 # WLAN
 vendor/bin/cnss-daemon
+vendor/bin/nv_mac
+vendor/etc/wifi/p2p_supplicant_overlay.conf
 
 # WiFi Display - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/wfdvndservice|194bb3aef5237f05d0c8fab2c88846147a6cc55a

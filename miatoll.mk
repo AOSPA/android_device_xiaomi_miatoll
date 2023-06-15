@@ -235,6 +235,7 @@ PRODUCT_PACKAGES += \
     AOSPAMiatollSettingsOverlay \
     MiatollCarrierConfigOverlay \
     MiatollFrameworksOverlay \
+    MiatollNfcOverlay \
     MiatollSettingsOverlay \
     MiatollSystemUIOverlay \
     MiatollWifiOverlay \

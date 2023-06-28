@@ -91,7 +91,7 @@ on property:vendor.post_boot.parsed=1
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800 6:1267200"
     write /sys/module/cpu_boost/parameters/input_boost_ms 100
     write /sys/module/cpu_boost/parameters/powerkey_input_boost_freq "0:1804800 6:2208000"
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 500
+    write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 750
 
     # Configure scheduler parameters
     write /proc/sys/kernel/sched_child_runs_first 1

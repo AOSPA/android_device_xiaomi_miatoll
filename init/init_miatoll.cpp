@@ -72,8 +72,8 @@ void load_device_properties() {
     if (hwname == "curtana") {
         if (region == "Global_PA" || region == "Global_TWO" || region == "Japan") {
             set_device_props(
-                "Redmi/curtana_global/curtana:12/RKQ1.211019.001/V14.0.3.0.SJWMIXM:user/release-keys",
-                "qssi-user 12 SKQ1.211019.001 V14.0.3.0.SJWMIXM release-keys", "Redmi", "curtana",
+                "Redmi/curtana_global/curtana:12/RKQ1.211019.001/V14.0.4.0.SJWMIXM:user/release-keys",
+                "qssi-user-12-SKQ1.211019.001-V14.0.4.0.SJWMIXM-release-keys", "Redmi", "curtana",
                 "Redmi Note 9S");
         } else if (region == "India") {
             set_device_props(

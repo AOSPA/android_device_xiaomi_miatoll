@@ -281,6 +281,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     wfd \
     wlan
 
+TARGET_GPS_COMPONENT_VARIANT := gps
+
 # Radio
 PRODUCT_PACKAGES += \
     libwpa_client

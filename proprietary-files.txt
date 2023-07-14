@@ -735,13 +735,13 @@ vendor/firmware/ipa_fws.mdt
 # IR
 vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.atoll.so
 
-# Keymaster - from LA.UM.9.1.r1-12900-SMxxx0.0
-vendor/bin/hw/android.hardware.keymaster@4.1-service-qti|db1f33e0034b30ff733c22db53262fde033c2b0d
-vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc|404c5d9a5bef88d7c97fe1031cb8142932500509
-vendor/lib64/libkeymasterdeviceutils.so|6fd0b0e1b30c4e6c5272794896306596880c657b
-vendor/lib64/libkeymasterutils.so|2392abef423c0610d9625670f1ff3063532e9bc1
-vendor/lib64/libqcbor.so|7da5294a577f5a71ede5b3804a026bf69bd025ee
-vendor/lib64/libqtikeymaster4.so|8d0028fe8b32b7636f1f2cd1f6990333a5229978
+# Keymaster
+vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
+vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc:vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterutils.so
+vendor/lib64/libqcbor.so
+vendor/lib64/libqtikeymaster4.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.atoll.so

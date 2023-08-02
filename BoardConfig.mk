@@ -34,6 +34,9 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 ODM_MANIFEST_SKUS := joyeuse
 ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/configs/hidl/manifest_nfc.xml
 
+# Health
+TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_miatoll
 TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll

@@ -1,10 +1,6 @@
 # ADSP - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/adsprpcd|12e09d8e87b260a8721c7938890186a0877a9e85
 vendor/etc/init/vendor.qti.adsprpc-service.rc|54588df8e7da58c66838028d2284986b966c2d37
-vendor/lib/libadsp_default_listener.so|49d7644708419ea077ffd9d00901ebf6cdd4377c
-vendor/lib/libadsprpc.so|d178f711635f892c30bf7ca95c32a02eb42e1395
-vendor/lib/libmdsprpc.so|8d30415d966c534a304abf07602081c6a026e483
-vendor/lib/libsdsprpc.so|e97c96c864b37a84ea00dff264246b8160003988
 vendor/lib64/libadsp_default_listener.so|3ebcf635d6cdc447b8ecd40ea76bda39bf82c308
 vendor/lib64/libadsprpc.so|b74d025169fdcfdfdfd2c2d94062dc3e04261f93
 
@@ -74,31 +70,6 @@ vendor/lib/soundfx/libqcompostprocbundle.so
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib64/liba2dpoffload.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
-vendor/lib64/libaudioalsa.so
-vendor/lib64/libaudioconfigstore.so
-vendor/lib64/libaudioparsers.so
-vendor/lib64/libbatterylistener.so
-vendor/lib64/libcirrusspkrprot.so
-vendor/lib64/libcomprcapture.so
-vendor/lib64/libexthwplugin.so
-vendor/lib64/libhdmiedid.so
-vendor/lib64/libhdmipassthru.so
-vendor/lib64/libhfp.so
-vendor/lib64/libqtigef.so
-vendor/lib64/libsndmonitor.so
-vendor/lib64/libspkrprot.so
-vendor/lib64/libssrec.so
-vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libqcompostprocbundle.so
-vendor/lib64/soundfx/libqcomvisualizer.so
-vendor/lib64/soundfx/libqcomvoiceprocessing.so
-vendor/lib64/soundfx/libshoebox.so
 
 # Audio calibration
 vendor/etc/acdbdata/IDP/IDP_Bluetooth_cal.acdb
@@ -120,14 +91,9 @@ vendor/etc/acdbdata/IDP/atoll-wcd937x-snd-card/IDP_WCD937X_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Audio HAL
+system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib/hw/audio.primary.atoll.so
 vendor/lib/libaudio_log_utils.so
-vendor/lib64/hw/audio.primary.atoll.so
-vendor/lib64/libaudio_log_utils.so
-
-# Audio HAL Ext
-system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so
-system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 # Battery
 vendor/bin/batterysecret
@@ -432,8 +398,6 @@ vendor/lib64/camera/com.qti.tuned.ofilm_s5kgw1.bin
 # CDSP - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/cdsprpcd|530bcfcf9a31dedcc6c8ff5ea33fbaf8c03ab877
 vendor/etc/init/vendor.qti.cdsprpc-service.rc|36772b70216796e8ef19376d9c6a81ee9ffff549
-vendor/lib/libcdsp_default_listener.so|6a3f97faf26da3d01f7895d37c09c8bc62030e0a
-vendor/lib/libcdsprpc.so|b420c27a301356d517f84d2df7442977cd7c8083
 vendor/lib64/libcdsp_default_listener.so|81e5f4737bfb7e2f0a906183b2a8357a5053ee5c
 vendor/lib64/libcdsprpc.so|dbb387be2104dfd73ccc37dc040d2f63ed919de0
 
@@ -534,6 +498,12 @@ vendor/lib64/libsdm-disp-vndapis.so|60da199073d2b0881bf075190a644b332503f39c
 vendor/lib64/libsdmextension.so|e10d29f29b7a53b75369e58e8a165b2b86609f26
 vendor/lib64/libtinyxml2_1.so|ff32deb110acb02cb5def5f3404f9064c1276483
 
+# Display calibration
+vendor/bin/qdcmss
+vendor/etc/init/qdcmss.rc
+vendor/etc/qdcm_calib_data_ft8756_video_mode_dsi_huaxing_panel.xml
+vendor/etc/qdcm_calib_data_nt36675_video_mode_dsi_tianma_panel.xml
+
 # Display postprocessing - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/hw/vendor.display.color@1.0-service|91e9e25ec4d64c4a7d5261899ca2cdb9cf29b695
 vendor/bin/ppd|8bb89d7a1c3fc8fd93796f70842d3c94d6393f86
@@ -583,7 +553,7 @@ vendor/lib64/libssd.so|e255c1453e1ea5b7e02555bf3301791aba370baf
 vendor/lib64/libtrustedapploader.so|e9ebd0130381cf60219d4c511a8e6908684cb7ab
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so|1b4c92c07ed5ba3f053e10a11f2bc1232ad45375
 
-# DRM (Widevine)
+# DRM - Widevine
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
@@ -907,16 +877,9 @@ vendor/lib64/libqmi_encdec.so|a18bb21e5b9b53e3dc8dc45f6e7e65e32a467607
 vendor/lib64/libqmi_legacy.so|f324c6701ecf78ff50975c0bc7f99aea09cb3539
 vendor/lib64/libqmiservices.so|d3f7a54cc94a60286dec89caa2dd843da79b51c4
 
-# QDCM
-vendor/bin/qdcmss
-vendor/etc/init/qdcmss.rc
-vendor/etc/qdcm_calib_data_ft8756_video_mode_dsi_huaxing_panel.xml
-vendor/etc/qdcm_calib_data_nt36675_video_mode_dsi_tianma_panel.xml
-
 # QTEE connector - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|4167b12a9f09c52a4dc1555f243dec17051b8a23
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|c966350ee67d3a7c73ca7184e3725264025d16f5
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|d8a8e56d560ee933ff6d71a64aea10fbaacf09e6
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|8447345452fb3cdc687e7ec67612d9626983b033
 vendor/lib64/libGPQTEEC_vendor.so|d70f659c06a38dbae028f41ca6e0dece0ef1d5cd
 vendor/lib64/libGPTEE_vendor.so|92c0215dbd3271e597d536c259df44aac716a402
@@ -1078,12 +1041,6 @@ vendor/bin/sscrpcd
 vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
-vendor/lib/libsensorslog.so
-vendor/lib/libsns_low_lat_stream_stub.so
-vendor/lib/libsnsapi.so
-vendor/lib/libsnsdiaglog.so
-vendor/lib/libssc.so
-vendor/lib/sensors.ssc.so
 vendor/lib64/libsensorslog.so
 vendor/lib64/libsns_low_lat_stream_stub.so
 vendor/lib64/libsnsapi.so
@@ -1147,8 +1104,6 @@ vendor/lib64/vendor.qti.hardware.soter@1.0.so
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
-vendor/lib/libthermalclient.so
-vendor/lib/libthermalfeature.so
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalfeature.so
 
@@ -1171,12 +1126,12 @@ vendor/firmware/aw8624_rtp_1.bin
 vendor/firmware/drv2624.bin
 vendor/firmware/drv2624.rtp
 
-# WLAN
+# Wi-Fi
 vendor/bin/cnss-daemon
 vendor/bin/nv_mac
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 
-# WiFi Display - from LA.UM.9.1.r1-12900-SMxxx0.0
+# Wi-Fi Display - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/wfdvndservice|194bb3aef5237f05d0c8fab2c88846147a6cc55a
 vendor/bin/wifidisplayhalservice|36bddae1febbee1bb53a80646d17c0fe36199757
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|576ce4393b7746b77a230745aa9e9ee3bd31b17d
@@ -1210,7 +1165,7 @@ vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|380ad98e175266
 vendor/lib64/libwfddisplayconfig_proprietary.so|45e8ae904778e66aa0e5c2fe2b598eb2014d3253
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|86b6ce7b14bcc8f6ab3215962aab694404c27d14
 
-# WiFi Display - HDCP - from LA.UM.9.1.r1-12900-SMxxx0.0
+# Wi-Fi Display - HDCP - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/wfdhdcphalservice|40c3d329f49cbb56286d6a550cc8b12ac95048df
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc|c266f08783a17f6583e3f22c85e55b0c200442ea
 vendor/etc/seccomp_policy/wfdhdcphalservice.policy|23b46af886f3233c2bddff87507ae8d37c31c022

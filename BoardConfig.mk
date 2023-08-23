@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2023 Paranoid Android
+# Copyright (C) 2024 Paranoid Android
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -19,44 +19,36 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := miatoll
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
-# DTB
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_BOOTIMG_HEADER_VERSION := 2
-BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
-
-# DTBO
-BOARD_KERNEL_SEPARATED_DTBO := true
-
-# Display
-TARGET_SCREEN_DENSITY := 420
+# Build
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Gestures
 TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event1"
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(DEVICE_PATH)/configs/hidl/xiaomi_vendor_framework_compatibility_matrix.xml
-
-DEVICE_MANIFEST_FILE += \
-    $(DEVICE_PATH)/configs/hidl/manifest.xml \
-    $(DEVICE_PATH)/configs/hidl/xiaomi_manifest.xml
-
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/device_framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 ODM_MANIFEST_SKUS := joyeuse
-ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
-
-# Hacks
-BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/configs/hidl/manifest_nfc.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_miatoll
+TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll
 
 # Kernel
+BOARD_BOOTIMG_HEADER_VERSION := 2
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_RAMDISK_OFFSET := 0x01000000
+BOARD_RAMDISK_USE_LZ4 := true
+
 BOARD_KERNEL_CMDLINE += \
     androidboot.console=ttyMSM0 \
     androidboot.hardware=qcom \
+    androidboot.init_fatal_reboot_target=recovery \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
     cgroup.memory=nokmem,nosocket \
@@ -69,21 +61,12 @@ BOARD_KERNEL_CMDLINE += \
     service_locator.enable=1 \
     swiotlb=1
 
-BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_RAMDISK_USE_LZ4 := true
-
-TARGET_KERNEL_CONFIG := vendor/miatoll-perf_defconfig
+KERNEL_DEFCONFIG := vendor/miatoll-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/miatoll
-
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
-# Metadata
-BOARD_USES_METADATA_PARTITION := true
 
 # OTA
 TARGET_OTA_ASSERT_DEVICE := curtana,excalibur,gram,joyeuse
@@ -94,6 +77,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
+BOARD_USES_METADATA_PARTITION := true
 
 BOARD_SUPER_PARTITION_SIZE := 8589934592
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
@@ -117,17 +101,20 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
+# Screen density
+TARGET_SCREEN_DENSITY := 420
+
 # Security patch level
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
-# SELinux
+# Sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy/vendor
 

@@ -32,14 +32,6 @@ vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/misound_res.bin
 vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
 
-# Alarm - from LA.UM.9.1.r1-12900-SMxxx0.0
-product/app/PowerOffAlarm/PowerOffAlarm.apk|bc906abd03e4a243201dde626b6580fd8a4f73ce
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|586b142f9bc4bf3098b4962682c4de1c13810f9b
-vendor/bin/power_off_alarm|b8c7ddc1bed336753c3746925fd0f4a9925aa36c
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|4129558506dc078c03679ba362acda4755457742
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|dcfdc04b4e0c6e6a4ffa60e1694268bd0327e65c
-
 # Audio
 vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
@@ -52,7 +44,6 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libbatterylistener.so
-vendor/lib/libcirrusspkrprot.so
 vendor/lib/libcomprcapture.so
 vendor/lib/libdrc.so
 vendor/lib/libexthwplugin.so
@@ -70,6 +61,10 @@ vendor/lib/soundfx/libqcompostprocbundle.so
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libshoebox.so
+
+# Audio HAL
+vendor/lib/hw/audio.primary.atoll.so
+vendor/lib/libaudio_log_utils.so
 
 # Audio calibration
 vendor/etc/acdbdata/IDP/IDP_Bluetooth_cal.acdb
@@ -90,10 +85,13 @@ vendor/etc/acdbdata/IDP/atoll-wcd937x-snd-card/IDP_WCD937X_Speaker_cal.acdb
 vendor/etc/acdbdata/IDP/atoll-wcd937x-snd-card/IDP_WCD937X_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
-# Audio HAL
-system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so
-vendor/lib/hw/audio.primary.atoll.so
-vendor/lib/libaudio_log_utils.so
+# Audio configs
+vendor/etc/audio_effects.xml
+vendor/etc/audio_io_policy.conf
+vendor/etc/audio_platform_info_intcodec.xml
+vendor/etc/sound_trigger_mixer_paths.xml
+vendor/etc/sound_trigger_mixer_paths_wcd937x.xml
+vendor/etc/sound_trigger_platform_info.xml
 
 # Battery
 vendor/bin/batterysecret
@@ -103,39 +101,28 @@ vendor/etc/init/init.batterysecret.rc
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|07d96d0d3c4a500b14ea3c97e02b9eb5ee2bbc4d
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|f4ee3b2da2b08647447869ade86ec63f7340accc
 vendor/lib/btaudio_offload_if.so|a6a47f8397048e0286d6291b1996d6af16cbe241
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so|cb4f9acae2c1e1e079c4d565eafcaec815796062
 vendor/lib/hw/audio.bluetooth_qti.default.so|6ce26888f5b67e3e211a7cfe11554d842162ae07
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|7d9503fce83522d27bcdae531a4e0b320281f85f
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|a83e30d60645db71d5fcb57ef1dd708af95ed662
 vendor/lib/libbluetooth_audio_session_qti.so|0b306bac29ba1beff74c9e84785f0e77efb4402c
 vendor/lib/libbluetooth_audio_session_qti_2_1.so|b894e2e3768c2f3d6a21fae79a92663822e53450
-vendor/lib/libbt-hidlclient.so|2648e2161b8423073a6449a4ec72b3fb33123e7a
-vendor/lib/libbtnv.so|887149605c2f810e9e996354d24d2fdd39d13e5c
-vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so|42595c79d388cc5ba1c2f50a0caa20640d5d5708
-vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so|b719b696b47d5ba10547bc7a969dd527e61ba650
-vendor/lib64/btaudio_offload_if.so|8123f7b390fb69e80df8e28d069521b743633246
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|3f287987465e65e982e34cf2c264c5adc1ef8635
-vendor/lib64/hw/audio.bluetooth_qti.default.so|e5f1e800b423d026070c263e6d1120ca9665c427
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so|87dc1a131534659173e71e108e7a3ffe6325845f
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|8bfbc542d600d4986b7c42281ffccfa75094ca5b
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|66547bbe6adc68fa248f8758fbf2d3435cfe8e7d
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|156ec51ccb53f667605cf99422abf9357888b4b6
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|a9685a3bc4d4c5a0afbd915ec7babd2ba3e929ff
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|3e1a8c52d73ef5e67bea68610906627226aabe21
-vendor/lib64/libbluetooth_audio_session_qti.so|78bb8ada323d87a93600009557949bd1552877f0
-vendor/lib64/libbluetooth_audio_session_qti_2_1.so|f298669097abb8b47a24c46e4bf4eae872781299
 vendor/lib64/libbt-hidlclient.so|ff301380cf3c0ff68d2b7fcda3ba428ebf0a859e
 vendor/lib64/libbtnv.so|0c74a43550b939b9496b03b3285fa950cf560c48
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|23706dcfa35cc6f7dee934e13886c19a56a9aa12
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|ece3dafc4447e8302109851c3a6b0d3978b3506d
 
 # Camera
-vendor/lib/libcamxfdalgov7.so
-vendor/lib/libcamxfdalgov8.so
-vendor/lib/libcamxfdengine.so
-vendor/lib/libcamxstatscore.so
-vendor/lib/libcamxswprocessalgo.so
-vendor/lib/libcamxtintlessalgo.so
+vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
+vendor/lib64/camera.device@1.0-impl.so
+vendor/lib64/camera.device@3.2-impl.so
+vendor/lib64/camera.device@3.3-impl.so
+vendor/lib64/camera.device@3.4-impl.so
+vendor/lib64/camera.device@3.5-impl.so
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/libFaceGrade.so
@@ -210,6 +197,7 @@ vendor/lib64/libvideofilter_only.so
 vendor/lib64/libvidhance.so
 vendor/lib64/libxmi_high_dynamic_range.so
 vendor/lib64/libxml2_vendor.so
+vendor/lib64/vendor.qti.hardware.camera.device@3.5.so
 
 # Camera components
 vendor/lib64/camera/components/com.almalence.node.sr.so
@@ -317,10 +305,6 @@ vendor/etc/camera/watermark_font_2300_3199.dat
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
 vendor/firmware/osc_rtp_24K_5s.bin
-
-# Camera provider
-vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
-vendor/lib64/vendor.qti.hardware.camera.device@3.5.so
 
 # Camera sensors
 vendor/lib64/camera/com.qti.eeprom.sunny_gc8034.so
@@ -638,8 +622,6 @@ vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|3ff445db2dd2db1a1068fe70a54a6c
 
 # GPU (SDM)
 vendor/etc/SVIConfig.xml
-vendor/lib/libVkLayer_q3dtools.so
-vendor/lib64/libVkLayer_q3dtools.so
 
 # GPU adreno - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/lib/egl/eglSubDriverAndroid.so|dd4d0a030c41dd2d02e20060272db86a54b7a6a0
@@ -652,6 +634,7 @@ vendor/lib/hw/vulkan.adreno.so|eb44067de1b12fb5ecd4f99eb810e7a3395979f0
 vendor/lib/libC2D2.so|91f015cad79024fdbb6a5603cce48693e58a4510
 vendor/lib/libCB.so|d92d057f27db12a90dd7886eccf3a5e8bf693c97
 vendor/lib/libOpenCL.so|7e06bf784e1c4e1b89dbe811b038efcc7c1221a0
+vendor/lib/libVkLayer_q3dtools.so|d4c0fc987b6fce4392d5a1e786fee70affc36a01
 vendor/lib/libadreno_app_profiles.so|ee15487a5f917173b2e2fc933c251a17b79dd0c1
 vendor/lib/libadreno_utils.so|b31a86288dccf104f439e358c2f5502c69f11ae6
 vendor/lib/libc2d30_bltlib.so|cd66b979896c3bfb978ce8a48b9fb7b5c4052962
@@ -669,6 +652,7 @@ vendor/lib64/hw/vulkan.adreno.so|645840e711a880303bdea638ad664b349022cd2a
 vendor/lib64/libC2D2.so|175115cc36fd471f9eb83af76be21b5f602b9460
 vendor/lib64/libCB.so|701dd9fe6954a061ce4ff0e5416e6afd100dede8
 vendor/lib64/libOpenCL.so|5aecd08fbf5470c2ff467f2e54fb513c592d6272
+vendor/lib64/libVkLayer_q3dtools.so|795d6328e506a8bc42ac7038e1686ab06663704c
 vendor/lib64/libadreno_app_profiles.so|2a8e7ee309252e60228f05aa9362fc2e42463336
 vendor/lib64/libadreno_utils.so|3963aef4cd45e887917e2a976ba316e39d7effac
 vendor/lib64/libc2d30_bltlib.so|7227336646c799caf2bc7b0ed5152e3dc886510d
@@ -800,16 +784,13 @@ vendor/lib/libpn553_fw.so
 
 # NFC (Secure Element) - from LA.UM.9.1.r1-12900-SMxxx0.0
 vendor/bin/hw/vendor.qti.esepowermanager@1.1-service|040212c2c39ca3f2090291dd3a7f49979e5003df
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|15378114c18fd1b1c8f9671f656396285ad1de48
 vendor/bin/hw/vendor.qti.secure_element@1.2-service|5e51b60d02753c1dca5645e3e6a8fc81f4cebcf7
 vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc|3c024c7135ec3dd8658624509ee61396a74f1ede
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
 vendor/etc/init/vendor.qti.secure_element@1.2-service.rc|cb8e44a67709a5d9c2f0544058d79eb9f6faad7b
 vendor/lib64/android.hardware.secure_element@1.0-impl.so|6351071bf4ef11cf16b2af9330bd9f1b2b54cc5f
 vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so|7b67b47030f00af1c2e207995eea05f05fb91b23
 vendor/lib64/vendor.qti.esepowermanager@1.0.so|6585b5976a98053fb4d2b51c32337ebe8960d427
 vendor/lib64/vendor.qti.esepowermanager@1.1.so|61d7c35edb403f8de4be2e483431cb26109ef0ae
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|4ba792ee3234dca4cd7ebbd7b3f9003c800f51b4
 
 # PASR
 vendor/bin/hw/vendor.qti.power.pasrmanager@1.0-service

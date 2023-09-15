@@ -239,6 +239,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AOSPAMiatollFrameworksOverlay \
     AOSPAMiatollSettingsOverlay \
+    MiatollApertureOverlay \
     MiatollCarrierConfigOverlay \
     MiatollFrameworksOverlay \
     MiatollNfcOverlay \

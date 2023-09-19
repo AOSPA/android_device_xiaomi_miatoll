@@ -210,6 +210,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.lmk.force_inkernel_lmk=true
 
+# Media
+TARGET_DISABLE_C2_CODEC := false
+
 # NFC
 TARGET_NFC_SKU := joyeuse
 

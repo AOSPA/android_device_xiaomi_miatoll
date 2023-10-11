@@ -60,6 +60,9 @@ function blob_fixup() {
             sed -i "s/0x10080/0/g" "${2}"
             sed -i "s/0x1F/0x0/g" "${2}"
             ;;
+        vendor/lib64/camera/components/com.qti.node.watermark.so)
+            "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
+            ;;
         vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc)
             sed -i "s/4\.0/4\.1/g" "${2}"
             ;;

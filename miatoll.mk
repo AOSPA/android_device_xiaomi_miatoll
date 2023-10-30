@@ -241,6 +241,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AOSPAMiatollFrameworksOverlay \
     AOSPAMiatollSettingsOverlay \
+    AOSPAMiatollSystemUIOverlay \
     AvoidAppsInCutoutOverlay \
     MiatollApertureOverlay \
     MiatollCarrierConfigOverlay \

@@ -57,6 +57,9 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/sde/queue/read_ahead_kb 128
     write /sys/block/sdf/queue/read_ahead_kb 128
 
+    # CPU Boost
+    write /sys/devices/system/cpu/cpu_boost/input_boost_ms 200
+
     # Setup runtime cpusets
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-5,7

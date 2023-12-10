@@ -79,6 +79,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
+# Cutout
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_hide_display_cutout=true
+
 # Display / Graphics
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
@@ -237,6 +241,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AOSPAMiatollFrameworksOverlay \
     AOSPAMiatollSettingsOverlay \
+    AvoidAppsInCutoutOverlay \
     MiatollApertureOverlay \
     MiatollCarrierConfigOverlay \
     MiatollFrameworksOverlay \

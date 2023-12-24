@@ -249,6 +249,7 @@ PRODUCT_PACKAGES += \
     MiatollSettingsOverlay \
     MiatollSystemUIOverlay \
     MiatollWifiOverlay \
+    MiatollWifiMainlineOverlay \
     NoCutoutOverlay
 
 # ParanoidDoze

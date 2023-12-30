@@ -147,6 +147,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # GPS
 LOC_HIDL_VERSION = 4.0
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
+
 # GSI
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 

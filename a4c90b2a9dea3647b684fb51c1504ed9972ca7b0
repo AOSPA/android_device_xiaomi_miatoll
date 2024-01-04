@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ade130c2_2a457802",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-01-04T14:40:06Z",
+      "side": 1,
+      "message": "https://github.com/AOSPA/android_frameworks_base/blob/56577e6de3c65dcd7ca827852b3e1ddd533c3955/packages/SystemUI/res/values/integers.xml#L45",
+      "revId": "a4c90b2a9dea3647b684fb51c1504ed9972ca7b0",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}

@@ -88,8 +88,8 @@ void load_device_properties() {
             "Redmi Note 9 Pro Max");
     } else if (hwname == "gram") {
         set_device_props(
-            "POCO/gram_in/gram:12/RKQ1.211019.001/V14.0.3.0.SJPINXM:user/release-keys",
-            "qssi-user 12 SKQ1.211019.001 V14.0.3.0.SJPINXM release-keys", "POCO", "gram",
+            "POCO/gram_in/gram:12/RKQ1.211019.001/V14.0.5.0.SJPINXM:user/release-keys",
+            "qssi-user-12-SKQ1.211019.001-V14.0.5.0.SJPINXM-release-keys", "POCO", "gram",
             "POCO M2 Pro");
     } else if (hwname == "joyeuse") {
         set_device_props(

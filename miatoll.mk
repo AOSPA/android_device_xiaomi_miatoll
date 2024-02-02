@@ -13,20 +13,12 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.audio.sdk.fluencetype=fluence \
     vendor.audio.offload.buffer.size.kb=256
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.config.vc_call_vol_default=9 \
-    ro.config.vc_call_vol_steps=11 \
-    ro.vendor.audio.spk.clean=true \
-    ro.vendor.audio.soundfx.type=mi \
-    ro.vendor.audio.vocal.support=false \
-    ro.vendor.audio.surround.support=false \
-    ro.vendor.audio.spk.stereo=false \
-    ro.vendor.audio.scenario.support=false \
-    ro.vendor.audio.sfx.scenario=false \
-    ro.vendor.audio.sfx.earadj=false \
-    ro.vendor.audio.soundfx.usb=true
+    ro.config.vc_call_vol_steps=11
 
 # Bluetooth
 PRODUCT_ODM_PROPERTIES += \

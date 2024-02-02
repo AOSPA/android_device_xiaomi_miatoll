@@ -18,6 +18,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
 
+# Audio
+BOARD_SUPPORTS_OPENSOURCE_STHAL := true
+
 # Bootloader
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 

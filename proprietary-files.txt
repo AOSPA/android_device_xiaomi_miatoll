@@ -33,38 +33,20 @@ vendor/lib/rfsa/adsp/misound_res.bin
 vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
 
 # Audio
-vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
-vendor/lib/libaudioalsa.so
 vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioparsers.so
-vendor/lib/libbatterylistener.so
-vendor/lib/libcomprcapture.so
 vendor/lib/libdrc.so
-vendor/lib/libexthwplugin.so
-vendor/lib/libhdmiedid.so
 vendor/lib/libhdmipassthru.so
-vendor/lib/libhfp.so
 vendor/lib/libqtigef.so
-vendor/lib/libsndmonitor.so
-vendor/lib/libspkrprot.so
-vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libmisoundfx.so
-vendor/lib/soundfx/libqcompostprocbundle.so
-vendor/lib/soundfx/libqcomvisualizer.so
-vendor/lib/soundfx/libqcomvoiceprocessing.so
 vendor/lib/soundfx/libshoebox.so
-
-# Audio HAL
-vendor/lib/hw/audio.primary.atoll.so
-vendor/lib/libaudio_log_utils.so
 
 # Audio calibration
 vendor/etc/acdbdata/IDP/IDP_Bluetooth_cal.acdb
@@ -84,14 +66,6 @@ vendor/etc/acdbdata/IDP/atoll-wcd937x-snd-card/IDP_WCD937X_Headset_cal.acdb
 vendor/etc/acdbdata/IDP/atoll-wcd937x-snd-card/IDP_WCD937X_Speaker_cal.acdb
 vendor/etc/acdbdata/IDP/atoll-wcd937x-snd-card/IDP_WCD937X_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
-
-# Audio configs
-vendor/etc/audio_effects.xml
-vendor/etc/audio_io_policy.conf
-vendor/etc/audio_platform_info_intcodec.xml
-vendor/etc/sound_trigger_mixer_paths.xml
-vendor/etc/sound_trigger_mixer_paths_wcd937x.xml
-vendor/etc/sound_trigger_platform_info.xml
 
 # Battery
 vendor/bin/batterysecret
@@ -698,9 +672,8 @@ vendor/lib64/libqcbor.so
 vendor/lib64/libqtikeymaster4.so
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.atoll.so
-vendor/lib/libadpcmdec.so
 vendor/lib/libcapiv2svacnn.so
+vendor/lib/libcapiv2svarnn.so
 vendor/lib/libcapiv2vop.so
 vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so

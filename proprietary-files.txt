@@ -444,18 +444,6 @@ vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service|81be3e1c3928
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede0250585a44b01d351bbc301d7a13cc3d783d
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|12d4edcd852196a531f688ed74d86ea10c4acb43
 
-# Display - from LA.UM.9.1.r1-12900-SMxxx0.0
-vendor/lib64/libdisplayqos.so|5548732c916e629f18f45ce257ce843b679a136a
-vendor/lib64/libhdr_tm.so|a222a7d838735c5ce73f06d4096fea3ca19611c8
-vendor/lib64/libqseed3.so|7f2a659fb9acd84d79c11dbd6901b816d5d1214f
-vendor/lib64/libsdedrm.so|cac7d4ec717f1e8011018c7a9898901d00dabede
-vendor/lib64/libsdm-color.so|d0984c33dcbf84940676917e0c3584b0ccfeaf03
-vendor/lib64/libsdm-colormgr-algo.so|15f696a4575868e528360896f1e0098d531899c0
-vendor/lib64/libsdm-diag.so|8c038fda1addb5c9cb075d6ae1000698782ddd8b
-vendor/lib64/libsdm-disp-vndapis.so|60da199073d2b0881bf075190a644b332503f39c
-vendor/lib64/libsdmextension.so|e10d29f29b7a53b75369e58e8a165b2b86609f26
-vendor/lib64/libtinyxml2_1.so|ff32deb110acb02cb5def5f3404f9064c1276483
-
 # Display calibration
 vendor/bin/qdcmss
 vendor/etc/init/qdcmss.rc
@@ -704,15 +692,11 @@ vendor/lib/libOmxApeDecSw.so|a0980f890bfa7a04c4af2e3d40e176e7d7bbf693
 vendor/lib/libOmxDsdDec.so|93832f5a8e016a0cd419fca916f29a7987d4af9e
 vendor/lib/libOmxEvrcDec.so|e26f066a89944ee36450c5325b45e5529de60882
 vendor/lib/libOmxQcelp13Dec.so|ec0650fee64998b47cfed806cda26f0eb8fd85a8
-vendor/lib/libOmxVideoDSMode.so|22dfbf532097386c411ab479aa177ed0b098b0cb
 vendor/lib/libOmxWmaDec.so|964bcc289f1007838bf7a79bc9f67844476a539a
 vendor/lib/libdsd2pcm.so|c5ab1afd7a5a23bf83d80b5ac74247c3dd2085af
 vendor/lib/libmm-color-convertor.so|904f9daeca6323b7d240c2f640a92852bac88146
 vendor/lib/libmmosal.so|04a064cd6867ebba2c623a84606f76dbeea9d58e
 vendor/lib/libstagefright_soft_qtiflacdec.so|0ad5612570e968e4ac1eab04fbfce02489ce4dfc
-vendor/lib/vendor.qti.hardware.vpp@1.1.so|3e0467d0c30bb6cccab12d2e67dacc5ea852b3df
-vendor/lib/vendor.qti.hardware.vpp@1.2.so|d1226cfbeee864b7cac52bcee37fdf4524892fd6
-vendor/lib/vendor.qti.hardware.vpp@1.3.so|6ff4979c9632ce9f244aeba7a0804332328f3fa9
 vendor/lib64/libAlacSwDec.so|e520eafd5dd9ee29456b60f4668ea94394a61a63
 vendor/lib64/libApeSwDec.so|76d3cc02ca1c3cdc3c71e57dc6e53027d2bf3d37
 vendor/lib64/libFlacSwDec.so|c16096dee817ba98a5a7b79ae358ae0db27fe237
@@ -725,15 +709,10 @@ vendor/lib64/libOmxApeDec.so|d50587b5e889eb47348cd4700209e586bf7c2afd
 vendor/lib64/libOmxApeDecSw.so|f70889abc2d8beafa92d71d98a33d0e109b662f5
 vendor/lib64/libOmxEvrcDec.so|c46237c40fc9ca24109d55dd82c64137768d68c5
 vendor/lib64/libOmxQcelp13Dec.so|1e428b6dbd8a3f010c1f5fa208a14c362a502cf6
-vendor/lib64/libOmxSwVdec.so|d970eb8b494e28bc62c8774e81c136110f4d6b5d
-vendor/lib64/libOmxSwVencMpeg4.so|6a1c4607fb2c3c92c44e5001a3c246b704d19193
 vendor/lib64/libOmxWmaDec.so|103ca423a8bcf7900eadeec735d6a63118868935
 vendor/lib64/libmm-color-convertor.so|ade617dc02ec472e68755568d6295ab328aa97be
 vendor/lib64/libmmosal.so|a90209ff9e2005c04dcc8e75703fef8866639d3e
 vendor/lib64/libstagefright_soft_qtiflacdec.so|f984ca4f324e3af01ed40e8e9aca6b6b642c2b9b
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so|e336f4a3d0a50ee985639db6a8a70ec9817144ee
-vendor/lib64/vendor.qti.hardware.vpp@1.2.so|7ae61a9c75d4a17f0aad5969ce1a27cd5b0552ae
-vendor/lib64/vendor.qti.hardware.vpp@1.3.so|85a4e2ca843525db5c76486dbee4c5c7a672ee8d
 vendor/odm/etc/media_profiles_V1_0.xml|981dd4a7ffb9020aa1142930ff3ae6d07bda12aa
 
 # Neural-networks

@@ -9,6 +9,9 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
+PRODUCT_PACKAGES += \
+    audio_amplifier.tas2562
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
@@ -18,7 +21,8 @@ PRODUCT_ODM_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.config.vc_call_vol_default=9 \
-    ro.config.vc_call_vol_steps=11
+    ro.config.vc_call_vol_steps=11 \
+    ro.hardware.audio_amplifier=tas2562
 
 # Bluetooth
 PRODUCT_ODM_PROPERTIES += \

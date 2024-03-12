@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e7f9bf6_f6ff1675",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000737
+      },
+      "writtenOn": "2024-03-12T00:00:10Z",
+      "side": 1,
+      "message": "Does Atoll have Wi-Fi 6?",
+      "revId": "a292d99e6ba56af10a8468c30551ed26237d9c61",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
